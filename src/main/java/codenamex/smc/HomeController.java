@@ -35,6 +35,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import static codenamex.smc.Database.Const.*;
+
 /**
  * @author UpToDate
  * Here is a breakdown of the code:
@@ -76,7 +78,7 @@ public class HomeController implements Initializable {
         System.out.println("HomeController -> initialize() ...");
         InitializeNotes();
         try {
-            AnchorPane aboutPane = FXMLLoader.load(getClass().getResource("about.fxml"));
+            AnchorPane aboutPane = FXMLLoader.load(getClass().getResource(ABOUT_PAGE));
             aboutDialog = new Dialog();
             isVisible=!isVisible;
         } catch (IOException ex) {
@@ -108,7 +110,7 @@ public class HomeController implements Initializable {
     private void AddNoteAction(ActionEvent event) {
         System.out.println("HomeController -> AddNoteAction() ...");
         try {
-            Parent newNoteFXML = FXMLLoader.load(getClass().getResource("newNote.fxml"));
+            Parent newNoteFXML = FXMLLoader.load(getClass().getResource(NEW_NOTE));
             Scene sc = new Scene(newNoteFXML);
             Stage stage = new Stage();
             stage.setScene(sc);
@@ -135,7 +137,7 @@ public class HomeController implements Initializable {
             int count = noteList.size();
             for (int i = 0; i < count; i++) {
                 try {
-                    Parent NoteFXML = FXMLLoader.load(getClass().getResource("Note.fxml"));
+                    Parent NoteFXML = FXMLLoader.load(getClass().getResource(NOTE_PAGE));
                     NoteController.textStatic.setText(noteList.get(i).getText());
                     NoteController.idStaitc.setText(noteList.get(i).getid() + "");
                     NoteController.APStatic.setStyle("-fx-background-color : " + noteList.get(i).getHexaColor() + ";");
@@ -155,7 +157,7 @@ public class HomeController implements Initializable {
         int count = noteList.size();
         for (int i = 0; i < count; i++) {
             try {
-                Parent NoteFXML = FXMLLoader.load(getClass().getResource("Note.fxml"));
+                Parent NoteFXML = FXMLLoader.load(getClass().getResource(NOTE_PAGE));
                 NoteController.textStatic.setText(noteList.get(i).getText());
                 NoteController.idStaitc.setText(noteList.get(i).getid() + "");
                 NoteController.APStatic.setStyle("-fx-background-color : " + noteList.get(i).getHexaColor() + ";");

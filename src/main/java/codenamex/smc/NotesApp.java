@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import static codenamex.smc.Database.Const.NOTE_HOME;
+
 /**
  *
  * @author iftee
@@ -16,7 +18,7 @@ public class NotesApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("noteHome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(NOTE_HOME));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

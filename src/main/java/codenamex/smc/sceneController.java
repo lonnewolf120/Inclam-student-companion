@@ -22,6 +22,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
 
+import static codenamex.smc.Database.Const.*;
+
 public class sceneController {
     private static Parent root;
     private static Stage stage;
@@ -76,19 +78,19 @@ public class sceneController {
 
     }
     public static void switchToSignup(MouseEvent e) throws IOException {
-        switchControls(e,"signup.fxml");
+        switchControls(e,SIGNUP_PAGE);
     }
     public static void switchToSignupA(ActionEvent e) throws IOException {
-       switchControlsAction("signup.fxml", e);
+       switchControlsAction(SIGNUP_PAGE, e);
     }
     public static void switchToLoginA(ActionEvent e) throws IOException {
-        switchControlsAction("login.fxml",e);
+        switchControlsAction(LOGIN_PAGE,e);
     }
     public static void switchToLogin(MouseEvent e) throws IOException {
-        switchControls(e,"login.fxml");
+        switchControls(e,LOGIN_PAGE);
     }
     public static void switchToFP(MouseEvent e) throws IOException {
-        switchControls(e,"forgot-password.fxml");
+        switchControls(e,FP_PAGE);
     }
     public static void closeButton(ActionEvent e){
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();

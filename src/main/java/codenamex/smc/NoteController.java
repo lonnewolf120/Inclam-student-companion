@@ -24,6 +24,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
+import static codenamex.smc.Database.Const.NOTE_HOME;
+
 /**
  * FXML Controller class
  *
@@ -109,7 +111,7 @@ public class NoteController implements Initializable {
         }
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("noteHome.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource(NOTE_HOME));
             id.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex);

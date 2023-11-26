@@ -37,6 +37,8 @@ import java.util.ResourceBundle;
 import codenamex.smc.todo.add_item_controller;
 import javafx.util.Callback;
 
+import static codenamex.smc.Database.Const.*;
+
 public class dashboard implements Initializable {
 
     Stage stage;
@@ -121,12 +123,12 @@ public class dashboard implements Initializable {
         isOn.addListener((observable, oldValue, newValue)->{
             if(newValue)
             {
-                themeButton.getScene().getRoot().getStylesheets().remove(getClass().getResource("css-files/whitetheme.css").toString());
-                themeButton.getScene().getRoot().getStylesheets().add(getClass().getResource("css-files/darktheme.css").toString());
+                themeButton.getScene().getRoot().getStylesheets().remove(getClass().getResource(WHITE_THEME).toString());
+                themeButton.getScene().getRoot().getStylesheets().add(getClass().getResource(DARK_THEME).toString());
             }
             else
-                themeButton.getScene().getRoot().getStylesheets().remove(getClass().getResource("css-files/darktheme.css").toString());
-            themeButton.getScene().getRoot().getStylesheets().add(getClass().getResource("css-files/whitetheme.css").toString());
+                themeButton.getScene().getRoot().getStylesheets().remove(getClass().getResource(DARK_THEME).toString());
+            themeButton.getScene().getRoot().getStylesheets().add(getClass().getResource(WHITE_THEME).toString());
 
         });
     }
@@ -232,7 +234,7 @@ public class dashboard implements Initializable {
                     editIcon.setOnMouseClicked((MouseEvent event) -> {
                                 TaskProperty task = getTableView().getItems().get(getIndex());
                                 FXMLLoader loader = new FXMLLoader();
-                                loader.setLocation(getClass().getResource("addTask.fxml"));
+                                loader.setLocation(getClass().getResource(ADD_TASK));
                                 try {
                                     loader.load();
                                 } catch (IOException ex) {

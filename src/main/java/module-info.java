@@ -10,6 +10,8 @@ module java.codenamex.smc {
     requires javafx.graphics;
     requires javafx.controls;
     requires mysql.connector.j;
+//    requires fxfx.richtext;
+    requires richtextfx;
 //    requires MaterialFX;
 
     opens codenamex.smc to javafx.fxml, javafx.graphics;
@@ -19,6 +21,7 @@ module java.codenamex.smc {
     exports codenamex.smc;
 //    exports codenamex.smc;
     opens codenamex.smc.Database to javafx.fxml;
+    opens codenamex.smc.gui.components to javafx.fxml;
 //    opens codenamex.smc.notes.home to javafx.fxml;
     exports codenamex.smc.Database;
 //    exports codenamex.smc.notes.home;
