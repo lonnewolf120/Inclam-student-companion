@@ -4,15 +4,19 @@ import codenamex.smc.gui.TabSpace;
 import codenamex.smc.gui.mediator.Events;
 import codenamex.smc.gui.mediator.IMediator;
 import codenamex.smc.gui.mediator.Mediator;
+import codenamex.smc.sceneController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import codenamex.smc.smallUndoEngine.EditorTextHistory;
 import codenamex.smc.utilities.EditorUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -142,4 +146,11 @@ public class MainController {
     }
 
 
+    public void swtichToNotes(ActionEvent e) throws IOException {
+        sceneController.switchToNotes(e);
+    }
+
+    public void closeButton(ActionEvent e) {
+        sceneController.closeButton(e);
+    }
 }

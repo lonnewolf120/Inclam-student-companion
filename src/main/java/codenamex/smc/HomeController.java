@@ -315,4 +315,8 @@ public class HomeController implements Initializable {
     public void closeButton(MouseEvent e) {
         ((Stage) (((Node) (e.getSource())).getScene().getWindow())).close();
     }
+
+    public void switchToTasks(ActionEvent e) throws IOException {
+        sceneController.switchToTasks(e);
+    }
 }

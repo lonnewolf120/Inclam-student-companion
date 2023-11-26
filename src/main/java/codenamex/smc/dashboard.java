@@ -406,4 +406,7 @@ public class dashboard implements Initializable {
     }
 
 
+    public void swtichToNotes(ActionEvent e) throws IOException {
+        sceneController.switchToNotes(e);
+    }
 }

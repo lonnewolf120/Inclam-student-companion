@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.Button?>-->
+
+<?import codenamex.smc.gui.components.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="window" stylesheets="@../css-files/darktheme.css"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="codenamex.smc.gui.components.MainController">
+   <left>
+      <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="22.0" layoutY="52.0" prefHeight="412.0" prefWidth="148.0" spacing="15.0">
+               <children>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="TASKS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/TodoList.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" onAction="#swtichToNotes" prefHeight="25.0" prefWidth="173.0" text="NOTES">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notes.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="46.0" prefWidth="176.0" text="NOTICE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notice.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="TUTORIALS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Classroom2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="EDITOR">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Blog.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="USER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/User.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="544.0" prefHeight="52.0" prefWidth="59.0" style="-fx-background-radius: 10px;" text="+" textFill="#57a2ac">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children></Pane>
+   </left>
+   <top>
+      <AnchorPane fx:id="topbar" prefHeight="53.0" prefWidth="1232.0" styleClass="pane" BorderPane.alignment="CENTER">
+         <children>
+            <MainMenuBar fx:id="mainMenuBar" minHeight="30" minWidth="1000" prefHeight="49.0" prefWidth="1000.0" />
+            <Label contentDisplay="CENTER" layoutX="556.0" layoutY="2.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE" AnchorPane.bottomAnchor="8.399999999999999" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="484.8" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+               <effect>
+                  <Glow level="0.39" />
+               </effect>
+            </Label>
+            <Button layoutX="1148.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButton" text="Exit" textFill="#fafafa" wrapText="true" AnchorPane.bottomAnchor="5.600000000000001" AnchorPane.leftAnchor="1148.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Segoe UI Black" size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="37.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/Close.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

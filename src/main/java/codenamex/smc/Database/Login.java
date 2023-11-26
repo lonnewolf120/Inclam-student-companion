@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static codenamex.smc.Database.Const.TASK_DASHBOARD;
 import static codenamex.smc.Database.DatabaseManager.connectDB;
 
 public class Login {
@@ -52,7 +53,7 @@ public class Login {
 
             if (result.next()) {
                 userId = result.getInt("user_id"); // Get the user_id if the login is successful
-                sceneController.switchControlsAction("homepage/homepage-tasks.fxml", e);
+                sceneController.switchControlsAction(TASK_DASHBOARD, e);
             } else {
                 afterLoginText.setText("Login Credentials don't match. Try again😅");
             }

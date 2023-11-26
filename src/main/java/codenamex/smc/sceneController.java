@@ -3,23 +3,14 @@ package codenamex.smc;
 //import codenamex.smc.Login;
 //import codenamex.smc.RegisterUser;
 //import io.github.palexdev.materialfx.controls.*;
-import codenamex.smc.Database.DatabaseManager;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Objects;
 
 import static codenamex.smc.Database.Const.*;
@@ -91,6 +82,12 @@ public class sceneController {
     }
     public static void switchToFP(MouseEvent e) throws IOException {
         switchControls(e,FP_PAGE);
+    }
+    public static void switchToTasks(ActionEvent e) throws IOException {
+        switchControlsAction(TASK_DASHBOARD,e);
+    }
+    public static void switchToNotes(ActionEvent e) throws IOException {
+        switchControlsAction(NOTE_HOME,e);
     }
     public static void closeButton(ActionEvent e){
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();

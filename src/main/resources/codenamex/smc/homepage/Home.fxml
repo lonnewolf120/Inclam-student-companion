@@ -34,7 +34,7 @@
                <top>
                   <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #3F51B5;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="820.0" layoutY="32.0" onAction="#AddNoteAction" prefHeight="38.0" prefWidth="33.0" styleClass="round-button" stylesheets="@css-files/darktheme.css">
+                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="820.0" layoutY="32.0" onAction="#AddNoteAction" prefHeight="38.0" prefWidth="33.0" styleClass="round-button" stylesheets="@../css-files/darktheme.css">
                            <graphic>
 <!--                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="40" />-->
                            </graphic>
@@ -44,12 +44,12 @@
                            <graphic>
                               <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Smart-Classroom/src/main/resources/images/Logos/addnote.png" />
+                                    <Image url="@../../../images/Logos/addnote.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="739.0" layoutY="32.0" onAction="#refresh" prefHeight="56.0" prefWidth="56.0" styleClass="round-button" stylesheets="@css-files/darktheme.css">
+                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="739.0" layoutY="32.0" onAction="#refresh" prefHeight="56.0" prefWidth="56.0" styleClass="round-button" stylesheets="@../css-files/darktheme.css">
                            <graphic>
 <!--                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="40" />-->
                            </graphic>
@@ -59,7 +59,7 @@
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/Logos/RefreshAvailableUpdates.png" />
+                                    <Image url="@../../../images/Logos/RefreshAvailableUpdates.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -93,7 +93,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="27.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../../images/Logos/Search.png" />
+                                                      <Image url="@../../../images/Logos/Search.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -139,7 +139,7 @@
                      <graphic>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/Logos/Close.png" />
+                              <Image url="@../../../images/Logos/Close.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -150,7 +150,7 @@
       </AnchorPane>
    </children>
    <stylesheets>
-      <URL value="@home.css" />
-      <URL value="@css-files/darktheme.css" />
+      <URL value="@../home.css" />
+      <URL value="@../css-files/darktheme.css" />
    </stylesheets>
 </StackPane>

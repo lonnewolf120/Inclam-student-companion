@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.AboutController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="183.0" prefWidth="290.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.AboutController">
    <children>
-      <Button fx:id="okButton" layoutX="14.0" layoutY="93.0" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="23.0" prefWidth="67.0" text="exit">
+      <Button fx:id="okButton" layoutX="119.0" layoutY="129.0" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="31.0" prefWidth="62.0" text="close">
          <font>
-            <Font size="17.0" />
-         </font></Button>
-      <Text fx:id="aboutText" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fedator: a simple javafx text editor" wrappingWidth="258.986328125">
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect></Button>
+      <Text fx:id="aboutText" fill="WHITE" layoutX="68.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grp-04 Project" wrappingWidth="258.986328125">
          <font>
             <Font size="21.0" />
          </font>
+         <effect>
+            <Glow />
+         </effect>
       </Text>
-      <Hyperlink fx:id="githubLink" layoutX="14.0" layoutY="62.0" onAction="#githubLinkOnAction" text="Check my github" />
-      <Text fill="#ee0d0d" layoutX="158.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample Logo Here" textAlignment="CENTER" wrappingWidth="115.0">
+      <Hyperlink fx:id="githubLink" layoutX="15.0" layoutY="56.0" onAction="#githubLinkOnAction" prefHeight="31.0" prefWidth="119.0" text="Project Github" textFill="#4df0ff">
+         <effect>
+            <Reflection fraction="0.62" topOpacity="0.43" />
+         </effect>
          <font>
-            <Font size="23.0" />
-         </font>
-      </Text>
+            <Font size="17.0" />
+         </font></Hyperlink>
+      <ImageView fitHeight="70.0" fitWidth="92.0" layoutX="188.0" layoutY="40.0" onMouseClicked="#githubLinkOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Logos/notes2.png" />
+         </image>
+         <effect>
+            <Glow />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>
