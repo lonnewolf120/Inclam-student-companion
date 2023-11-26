@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>codenamex</groupId>
+  <artifactId>new-smc</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>smc</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<junit.version>5.9.2</junit.version>
+    <maven.compiler.source>21</maven.compiler.source> <!-- DO NOT USE JDK greater than 11 -->
+    <maven.compiler.target>21</maven.compiler.target> <!-- DO NOT USE JDK greater than 11 -->
+  </properties>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <!-- Other repositories, if needed -->
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21-ea+24</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-drive</artifactId>
+      <version>v3-rev20230822-2.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21-ea+24</version>
+    </dependency>
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/com.jfoenix/jfoenix &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>com.jfoenix</groupId>-->
+<!--      <artifactId>jfoenix</artifactId>-->
+<!--      <version>9.0.10</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/io.github.palexdev/materialfx &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>io.github.palexdev</groupId>-->
+<!--      <artifactId>materialfx</artifactId>-->
+<!--      <version>11.13.5</version>-->
+<!--    </dependency>-->
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-deploy-plugin</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.dlsc.formsfx/formsfx -->
+    <dependency>
+      <groupId>com.dlsc.formsfx</groupId>
+      <artifactId>formsfx</artifactId>
+      <version>11.6.0</version>
+      <type>pom</type>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.11.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+<!--      <dependency>-->
+<!--          <groupId>com.google.apis</groupId>-->
+<!--          <artifactId>google-api-services-drive</artifactId>-->
+<!--          <version>v2-rev190-1.20.0</version>-->
+<!--      </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.google.oauth-client</groupId>-->
+<!--      <artifactId>google-oauth-client-java6</artifactId>-->
+<!--      <version>1.23.0</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.google.oauth-client</groupId>-->
+<!--      <artifactId>google-oauth-client-jetty</artifactId>-->
+<!--      <version>1.23.0</version>-->
+<!--    </dependency>-->
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>9</source>
+          <target>9</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <jlinkExecutable>C:/Program Files/Java/jdk-21/bin/jlink</jlinkExecutable>
+        </configuration>
+        <executions>
+          <execution>
+            <!-- Default configuration for running with: mvn clean javafx:run -->
+            <id>default-cli</id>
+            <configuration>
+              <mainClass>codenamex.smc/codenamex.smc.HelloApplication</mainClass>
+              <launcher>app</launcher>
+              <jlinkZipName>app</jlinkZipName>
+              <jlinkImageName>app</jlinkImageName>
+              <noManPages>true</noManPages>
+              <stripDebug>true</stripDebug>
+              <noHeaderFiles>true</noHeaderFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

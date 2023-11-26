@@ -1,0 +1,7 @@
+/* custom-styles.css */
+.root {
+    -fx-background-color: #333333; /* Set the background color of the title bar */
+    -fx-font-size: 14px; /* Set the font size of title bar text */
+    -fx-text-fill: black; /* Set the text color of title bar text */
+    -fx-padding: 5px; /* Add padding to the title bar */
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.JFXButton?>-->
+<!--<?import com.jfoenix.controls.JFXTextArea?>-->
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="AP" prefHeight="220.0" prefWidth="220.0" styleClass="AP" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.NoteController">
+   <children>
+      <Label fx:id="id" textFill="TRANSPARENT" />
+      <VBox>
+         <children>
+            <TextArea fx:id="text" nodeOrientation="LEFT_TO_RIGHT" onKeyReleased="#editAction" prefHeight="260.0" prefWidth="260.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextArea>
+         </children>
+      </VBox>
+      <Button layoutX="216.0" layoutY="5.0" onAction="#delete" prefHeight="18.0" prefWidth="26.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Logos/delete.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+   <stylesheets>
+      <URL value="@note.css" />
+      <URL value="@css-files/darktheme.css" />
+   </stylesheets>
+</AnchorPane>

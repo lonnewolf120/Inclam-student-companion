@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.JFXButton?>-->
+<!--<?import com.jfoenix.controls.JFXTextField?>-->
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="AP" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.HomeController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="900.0" style="-fx-border-color: #303F9F; -fx-border-width: 3;">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #3F51B5;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="820.0" layoutY="32.0" onAction="#AddNoteAction" prefHeight="38.0" prefWidth="33.0" styleClass="round-button" stylesheets="@css-files/darktheme.css">
+                           <graphic>
+<!--                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="40" />-->
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../Smart-Classroom/src/main/resources/images/Logos/addnote.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="739.0" layoutY="32.0" onAction="#refresh" prefHeight="56.0" prefWidth="56.0" styleClass="round-button" stylesheets="@css-files/darktheme.css">
+                           <graphic>
+<!--                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="40" />-->
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/Logos/RefreshAvailableUpdates.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="21.0" layoutY="17.0" prefHeight="75.0" prefWidth="375.0" text="Quick Notes" textFill="WHITE">
+                           <font>
+                              <Font name="Comic Sans MS" size="53.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <ScrollPane prefHeight="759.0" prefWidth="859.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <VBox prefWidth="873.0" spacing="30.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="865.0" spacing="10.0">
+                                 <children>
+                                    <AnchorPane prefHeight="67.0" prefWidth="865.0">
+                                       <children>
+                                          <TextField fx:id="searchComBox" layoutX="13.0" onKeyReleased="#searchEvent" prefHeight="51.0" prefWidth="853.0" promptText="Search" style="-fx-background-color: #e4e4e4;" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="0.0">
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </TextField>
+                                          <Button contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="3.0" onAction="#searchEvent" styleClass="noStyle" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+                                             <graphic>
+<!--                                                <FontAwesomeIconView fill="#949494" glyphName="SEARCH" size="20" />-->
+                                             </graphic>
+                                             <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../images/Logos/Search.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <FlowPane fx:id="FP" alignment="CENTER" hgap="10.0" prefWidth="863.0" prefWrapLength="0.0" rowValignment="TOP" vgap="10.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+            <Pane layoutX="6.0" layoutY="6.0" onMouseDragged="#RootMouseDragged" onMousePressed="#RootMousePressed" prefHeight="51.0" prefWidth="891.0" style="-fx-background-color: #303F9F;" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="3.0">
+               <children>
+                  <MenuBar fx:id="menuBar" layoutY="12.0" maxHeight="98.0" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: #303F9F;">
+                     <menus>
+                        <Menu id="file" fx:id="file" mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem id="close" fx:id="About" mnemonicParsing="false" onAction="#aboutWidow" text="About">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem id="close" fx:id="close" mnemonicParsing="false" onAction="#closeWindow" text="Close">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <Button focusTraversable="false" layoutX="823.0" layoutY="6.0" onAction="#closeWindow" prefHeight="35.0" prefWidth="35.0" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/Logos/Close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@home.css" />
+      <URL value="@css-files/darktheme.css" />
+   </stylesheets>
+</StackPane>
