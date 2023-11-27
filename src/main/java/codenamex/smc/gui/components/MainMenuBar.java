@@ -147,6 +147,8 @@ public class MainMenuBar extends MenuBar {
     void closeMenuItemClick(ActionEvent event) {
         mediator.getEventBuilder().withEvent(Events.CLOSE_MENU).build();
         EditorUtils.onCloseExitConfirmation();
+
+    //sceneController.switchToTutorials(event);
     }
 
     /**
