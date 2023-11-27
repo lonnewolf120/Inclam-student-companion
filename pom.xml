@@ -24,6 +24,7 @@
   </repositories>
 
   <dependencies>
+
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
@@ -56,7 +57,16 @@
 <!--      <artifactId>materialfx</artifactId>-->
 <!--      <version>11.13.5</version>-->
 <!--    </dependency>-->
-
+<!--     <dependency>-->
+<!--        <groupId>org.controlsfx</groupId>-->
+<!--        <artifactId>controlsfx</artifactId>-->
+<!--        <version>11.1.0</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--    <groupId>de.jensd</groupId>-->
+<!--    <artifactId>fontawesomefx-fontawesome</artifactId>-->
+<!--    <version>4.7.0-11</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -94,7 +104,12 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-<!--      <dependency>-->
+    <dependency>
+      <groupId>de.jensd</groupId>
+      <artifactId>fontawesomefx</artifactId>
+      <version>8.9</version>
+    </dependency>
+    <!--      <dependency>-->
 <!--          <groupId>com.google.apis</groupId>-->
 <!--          <artifactId>google-api-services-drive</artifactId>-->
 <!--          <version>v2-rev190-1.20.0</version>-->

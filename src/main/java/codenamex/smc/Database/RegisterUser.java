@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.Statement;
 import codenamex.smc.sceneController;
 import javafx.scene.input.MouseEvent;
@@ -19,7 +20,7 @@ public class RegisterUser {
     @FXML
     private DatePicker date_of_birth;
     @FXML
-    private MenuButton institute;
+    private MenuButton genderSelect;
 
     @FXML
     private PasswordField new_pass;
@@ -41,13 +42,30 @@ public class RegisterUser {
     private Label passblank;
     @FXML
     private TextField register_username;
+    private String gend;
+    public void handleGenderSelection(ActionEvent event) {
+    MenuItem selectedItem = genderSelect.getItems().stream()
+            .filter(item -> item instanceof CheckMenuItem && ((CheckMenuItem) item).isSelected())
+            .findFirst()
+            .orElse(null);
+
+    if (selectedItem != null) {
+        String gend = selectedItem.getText();
+        System.out.println("Selected Gender: " + gend);
+        // You can update UI or perform any other actions based on the selected gender
+    } else {
+        System.out.println("No gender selected");
+    }
+    }
 
     public void registerAdmin(ActionEvent e) {
 //        String sql_command ="SELECT count(1) FROM login_info WHERE username = ? AND password = ?;";
         Connection connect = DatabaseManager.connectDB();
         String username = register_username.getText(), email = register_email.getText(), pass = new_pass.getText();
-        String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`) VALUES ('";
-        String insertValues = username + "','" + pass + "','" + email + "');";
+        Date dob = Date.valueOf(date_of_birth.getValue());
+//        String gender = genderSelect.
+        String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`,`date_of_birth`,`gender`) VALUES ('";
+        String insertValues = username + "','" + pass + "','" + email + "," + dob + "," + gend + "');";
         String insertToRegister = insertFields + insertValues;    //#SQL command
         try {
             Statement statement = connect.createStatement();
@@ -98,6 +116,6 @@ public class RegisterUser {
     }
 
     public void closeButton(ActionEvent e) {
-        sceneController.closeButton(e);
+        sceneController.closeButtonA(e);
     }
 }

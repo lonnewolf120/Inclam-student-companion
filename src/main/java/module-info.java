@@ -24,6 +24,7 @@ module java.codenamex.smc {
     opens codenamex.smc.gui.components to javafx.fxml;
 //    opens codenamex.smc.notes.home to javafx.fxml;
     exports codenamex.smc.Database;
+    exports codenamex.smc.viz to javafx.graphics;
 //    exports codenamex.smc.notes.home;
 
 //    exports java.codenamex.smc.todo_deprecated;

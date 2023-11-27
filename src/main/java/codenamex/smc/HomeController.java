@@ -319,4 +319,8 @@ public class HomeController implements Initializable {
     public void switchToTasks(ActionEvent e) throws IOException {
         sceneController.switchToTasks(e);
     }
+
+    public void switchToTutorial(ActionEvent e) throws IOException {
+        sceneController.switchToTutorial(e);
+    }
 }

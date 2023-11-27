@@ -151,6 +151,6 @@ public class MainController {
     }
 
     public void closeButton(ActionEvent e) {
-        sceneController.closeButton(e);
+        sceneController.closeButtonA(e);
     }
 }

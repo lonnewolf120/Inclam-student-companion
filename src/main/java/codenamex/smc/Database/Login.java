@@ -18,7 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static codenamex.smc.Database.Const.TASK_DASHBOARD;
+import static codenamex.smc.Database.Const.*;
 import static codenamex.smc.Database.DatabaseManager.connectDB;
 
 public class Login {
@@ -37,6 +37,11 @@ public class Login {
     private ImageView passEmpty;
     @FXML
     private Button submitButton;
+    @FXML
+    private Label fpb;
+    @FXML
+    private Label signup_button;
+
     private static int userId;
     public void loginAdmin(ActionEvent e) {
         userId = -1; // Initialize with an invalid value if the login is unsuccessful
@@ -62,6 +67,8 @@ public class Login {
         }
 
     }
+
+
     public static int getUserId(){return userId;}
 
     public void loginSubmitButton(ActionEvent e) throws IOException {
@@ -80,15 +87,31 @@ public class Login {
     }
 
     public void closeButton(ActionEvent e) {
-        sceneController.closeButton(e);
+        sceneController.closeButtonA(e);
     }
 
     public void switchToFP(MouseEvent e) throws IOException {
+        System.out.println("Moving to Forget password page");
         sceneController.switchToFP(e);
     }
 
     public void switchToSignup(MouseEvent e) throws IOException {
+
+        System.out.println("Moving to Signup page");
         sceneController.switchToSignup(e);
+    }
+    public void switchToFP(ActionEvent e) throws IOException {
+        System.out.println("Moving to Forget password page");
+        fpb.setText("Going to Forget Password Tab");
+        sceneController.switchControlsAction(FP_PAGE,e);
+    }
+
+    public void switchToSignup(ActionEvent e) throws IOException {
+
+        System.out.println("Moving to Signup page");
+
+        signup_button.setText("Going to Signup Tab");
+        sceneController.switchControlsAction(SIGNUP_PAGE,e);
     }
 
 }

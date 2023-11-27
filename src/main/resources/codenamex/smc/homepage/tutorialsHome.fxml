@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.jfoenix.controls.Button?>-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="window" prefHeight="779.0" prefWidth="1394.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.sceneController">
+   <left>
+      <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="22.0" layoutY="52.0" prefHeight="412.0" prefWidth="148.0" spacing="15.0">
+               <children>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="TASKS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/TodoList.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" onAction="#swtichToNotes" prefHeight="25.0" prefWidth="173.0" text="NOTES">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notes.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="46.0" prefWidth="176.0" text="NOTICE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/notice.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="TUTORIALS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Classroom2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" onAction="#switchToEditor" prefHeight="25.0" prefWidth="173.0" text="EDITOR">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/Blog.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="USER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Logos/User.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="544.0" prefHeight="52.0" prefWidth="59.0" style="-fx-background-radius: 10px;" text="+" textFill="#57a2ac">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children></Pane>
+   </left>
+   <top>
+      <AnchorPane fx:id="topbar" prefHeight="53.0" prefWidth="1232.0" styleClass="pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="641.0" layoutY="4.0" prefHeight="44.0" prefWidth="185.0" text="Inclam Classroom" textFill="WHITE" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="641.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+               <effect>
+                  <Glow level="0.39" />
+               </effect>
+            </Label>
+<!--            <Button layoutX="1303.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButtonA" prefHeight="46.0" prefWidth="79.0" text="Exit" textFill="#fafafa" visible="false" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1303.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="4.0">-->
+<!--               <font>-->
+<!--                  <Font name="Segoe UI Black" size="10.0" />-->
+<!--               </font>-->
+<!--               <graphic>-->
+<!--                  <ImageView fitHeight="34.0" fitWidth="37.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">-->
+<!--                     <image>-->
+<!--                        <Image url="@../../../images/Logos/Close.png" />-->
+<!--                     </image>-->
+<!--                     <viewport>-->
+<!--                        <Rectangle2D />-->
+<!--                     </viewport>-->
+<!--                  </ImageView>-->
+<!--               </graphic>-->
+<!--            </Button>-->
+<!--            <Button layoutX="1333.0" layoutY="7.0" mnemonicParsing="false" onAction="#closeButtonA">-->
+<!--               <graphic>-->
+<!--                  <ImageView fitHeight="30.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                     <image>-->
+<!--                        <Image url="@../../../images/Logos/Close.png" />-->
+<!--                     </image>-->
+<!--                  </ImageView>-->
+<!--               </graphic>-->
+<!--            </Button>-->
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <ScrollPane BorderPane.alignment="CENTER">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane layoutX="18.0" layoutY="146.0" prefHeight="560.0" prefWidth="1168.0">
+                     <content>
+                        <VBox prefHeight="970.0" prefWidth="1080.0">
+                           <children>
+                              <HBox prefHeight="335.0" prefWidth="931.0">
+                                 <children>
+                                    <Pane prefHeight="346.0" prefWidth="342.0" style="-fx-background-radius: 20 20 20 20;">
+                                       <opaqueInsets>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </opaqueInsets>
+                                       <children>
+                                          <ImageView fitHeight="238.0" fitWidth="316.0" layoutX="19.0" layoutY="8.0" onMouseClicked="#switchToStack" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/Logos/Stack3.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="130.0" layoutY="259.0" prefHeight="51.0" prefWidth="92.0" text="STACK">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <effect>
+                                          <Glow />
+                                       </effect>
+                                    </Pane>
+                                    <Pane prefHeight="346.0" prefWidth="342.0" style="-fx-background-radius: 20 20 20 20;">
+                                       <opaqueInsets>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </opaqueInsets>
+                                       <children>
+                                          <ImageView fitHeight="234.0" fitWidth="310.0" layoutX="19.0" layoutY="8.0" onMouseClicked="#switchToQueue" pickOnBounds="true">
+                                             <image>
+                                                <Image url="@../../../images/Logos/queue2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="130.0" layoutY="259.0" prefHeight="51.0" prefWidth="92.0" text="Queue">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <effect>
+                                          <Glow />
+                                       </effect>
+                                    </Pane>
+                                    <Pane prefHeight="346.0" prefWidth="342.0" style="-fx-background-radius: 20 20 20 20;">
+                                       <opaqueInsets>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </opaqueInsets>
+                                       <children>
+                                          <ImageView fitHeight="238.0" fitWidth="316.0" layoutX="19.0" layoutY="8.0" onMouseClicked="#switchToBST" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/Logos/bst2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="81.0" layoutY="259.0" prefHeight="51.0" prefWidth="222.0" text="Binary Search Tree">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <effect>
+                                          <Glow />
+                                       </effect>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="677.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

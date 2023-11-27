@@ -4,6 +4,7 @@
 <!--<?import io.github.palexdev.materialfx.controls.MFXButton?>-->
 <!--<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>-->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -15,17 +16,198 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="737.0" style="-fx-background-color: #333333; -fx-border-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.Database.RegisterUser">
-   <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+<BorderPane minHeight="600.0" minWidth="800.0" style="-fx-background-color: #333333; -fx-border-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.Database.RegisterUser">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="738.0" style="-fx-background-color: #333333;">
          <children>
-            <ImageView fitHeight="430.0" fitWidth="388.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true">
+            <Pane layoutX="169.0" layoutY="-54.0" prefHeight="536.0" prefWidth="538.0">
+               <children>
+                  <Label layoutX="50.0" layoutY="38.0" text="Username/ID" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="register_username" layoutX="54.0" layoutY="77.0" prefHeight="38.0" prefWidth="436.0" promptText="Username">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+                  <Label layoutX="42.0" layoutY="192.0" text="Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="register_submit" layoutX="215.0" layoutY="463.0" onAction="#register_submit_button" prefHeight="38.0" prefWidth="137.0" text="Submit">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                     </font>
+            <!--               <rippleColor>-->
+            <!--                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">-->
+            <!--                     <stops>-->
+            <!--                        <Stop>-->
+            <!--                           <color>-->
+            <!--                              <Color red="0.9599999785423279" green="0.5686529278755188" blue="0.10559999942779541" />-->
+            <!--                           </color>-->
+            <!--                        </Stop>-->
+            <!--                        <Stop offset="0.3780487804878049">-->
+            <!--                           <color>-->
+            <!--                              <Color red="0.8947368264198303" green="0.7118128538131714" blue="0.41754385828971863" />-->
+            <!--                           </color>-->
+            <!--                        </Stop>-->
+            <!--                        <Stop offset="0.7">-->
+            <!--                           <color>-->
+            <!--                              <Color red="0.9368420839309692" green="0.8477264642715454" blue="0.7043664455413818" />-->
+            <!--                           </color>-->
+            <!--                        </Stop>-->
+            <!--                        <Stop offset="1.0">-->
+            <!--                           <color>-->
+            <!--                              <Color red="1.0" green="1.0" blue="1.0" />-->
+            <!--                           </color>-->
+            <!--                        </Stop>-->
+            <!--                     </stops>-->
+            <!--                  </LinearGradient>-->
+            <!--               </rippleColor>-->
+                     <textFill>
+                        <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.8315789699554443" green="0.44966861605644226" blue="0.06775828450918198" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="0.8315789699554443" green="0.44966861605644226" blue="0.06775828450918198" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5376981912483997">
+                                 <color>
+                                    <Color red="0.8947368264198303" green="0.5186159610748291" blue="0.14249512553215027" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.9590815087154908">
+                                 <color>
+                                    <Color red="0.8947368264198303" green="0.7075048685073853" blue="0.5202729105949402" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.8947368264198303" green="0.7075048685073853" blue="0.5202729105949402" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Label layoutX="45.0" layoutY="117.0" text="Email" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="register_email" layoutX="53.0" layoutY="157.0" minHeight="26.0" prefHeight="40.0" prefWidth="437.0" promptText="Email">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+                  <Label layoutX="44.0" layoutY="262.0" text="Confirm Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="-11.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="48.0" prefWidth="233.0" text="Have an Account? Login" textFill="#ae9a91" underline="true">
+                     <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <PasswordField fx:id="new_pass" layoutX="51.0" layoutY="226.0" minHeight="27.0" prefHeight="41.0" prefWidth="437.0" promptText="Password">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </PasswordField>
+                  <PasswordField fx:id="confirm_pass" layoutX="51.0" layoutY="301.0" minHeight="27.0" prefHeight="39.0" prefWidth="439.0" promptText="Confirm Password">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </PasswordField>
+                  <DatePicker fx:id="date_of_birth" layoutX="52.0" layoutY="390.0" prefHeight="35.0" prefWidth="188.0" />
+                  <Label layoutX="51.0" layoutY="346.0" text="Date of Birth" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <MenuButton fx:id="genderSelect" layoutX="315.0" layoutY="388.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="171.0" text="Select Gender">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Male" />
+                      <MenuItem mnemonicParsing="false" text="Female" />
+                    </items>
+                  </MenuButton>
+                  <Label layoutX="319.0" layoutY="354.0" text="Gender" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="doesnt_match_text" layoutX="299.0" layoutY="248.0" prefHeight="19.0" prefWidth="189.0" textAlignment="CENTER" textFill="#df322f" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userblank" layoutX="390.0" layoutY="52.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="passblank1" layoutX="388.0" layoutY="128.0" prefHeight="26.0" prefWidth="89.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="passblank" layoutX="391.0" layoutY="205.0" prefHeight="19.0" prefWidth="109.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="passblank2" layoutX="392.0" layoutY="276.0" prefHeight="19.0" prefWidth="94.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Semibold Italic" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <Pane prefHeight="434.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="596.0" fitWidth="549.0" layoutX="1.0" layoutY="-56.0" pickOnBounds="true">
                <image>
                   <Image url="@../../images/signup.png" />
                </image>
@@ -39,107 +221,11 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane prefHeight="200.0" prefWidth="200.0" />
-      <Pane layoutX="386.0" layoutY="41.0" prefHeight="398.0" prefWidth="348.0">
+   </left>
+   <top>
+      <Pane BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="57.0" layoutY="58.0" text="Username/ID" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="register_username" layoutX="54.0" layoutY="79.0" prefHeight="26.0" prefWidth="258.0" promptText="Username" />
-            <Label layoutX="59.0" layoutY="169.0" text="Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            <Button fx:id="register_submit" layoutX="137.0" layoutY="349.0" onAction="#register_submit_button" prefHeight="26.0" prefWidth="88.0" text="Submit">
-               <font>
-                  <Font name="Segoe UI Semibold" size="12.0" />
-               </font>
-<!--               <rippleColor>-->
-<!--                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">-->
-<!--                     <stops>-->
-<!--                        <Stop>-->
-<!--                           <color>-->
-<!--                              <Color red="0.9599999785423279" green="0.5686529278755188" blue="0.10559999942779541" />-->
-<!--                           </color>-->
-<!--                        </Stop>-->
-<!--                        <Stop offset="0.3780487804878049">-->
-<!--                           <color>-->
-<!--                              <Color red="0.8947368264198303" green="0.7118128538131714" blue="0.41754385828971863" />-->
-<!--                           </color>-->
-<!--                        </Stop>-->
-<!--                        <Stop offset="0.7">-->
-<!--                           <color>-->
-<!--                              <Color red="0.9368420839309692" green="0.8477264642715454" blue="0.7043664455413818" />-->
-<!--                           </color>-->
-<!--                        </Stop>-->
-<!--                        <Stop offset="1.0">-->
-<!--                           <color>-->
-<!--                              <Color red="1.0" green="1.0" blue="1.0" />-->
-<!--                           </color>-->
-<!--                        </Stop>-->
-<!--                     </stops>-->
-<!--                  </LinearGradient>-->
-<!--               </rippleColor>-->
-               <textFill>
-                  <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.8315789699554443" green="0.44966861605644226" blue="0.06775828450918198" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.006729475100942127">
-                           <color>
-                              <Color red="0.8315789699554443" green="0.44966861605644226" blue="0.06775828450918198" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.5376981912483997">
-                           <color>
-                              <Color red="0.8947368264198303" green="0.5186159610748291" blue="0.14249512553215027" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.9590815087154908">
-                           <color>
-                              <Color red="0.8947368264198303" green="0.7075048685073853" blue="0.5202729105949402" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.8947368264198303" green="0.7075048685073853" blue="0.5202729105949402" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <Label layoutX="57.0" layoutY="112.0" text="Email" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="register_email" layoutX="53.0" layoutY="133.0" minHeight="26.0" minWidth="258.0" prefHeight="26.0" prefWidth="258.0" promptText="Email" />
-            <Label layoutX="56.0" layoutY="221.0" text="Confirm Password" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            
-                        <Label alignment="CENTER" layoutX="14.0" layoutY="-36.0" prefHeight="47.0" prefWidth="316.0" text="Signup" textAlignment="CENTER" textFill="#f7f2e7" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Black" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="57.0" layoutY="20.0" onMouseClicked="#switchToLogin" onMousePressed="#switchToLogin" prefHeight="17.0" prefWidth="171.0" text="Have an Account? Login" textFill="#ae9a91" underline="true">
-               <font>
-                  <Font name="Segoe UI Black" size="12.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="new_pass" layoutX="54.0" layoutY="188.0" minHeight="27.0" prefHeight="27.0" prefWidth="258.0" promptText="Password" />
-            <PasswordField fx:id="confirm_pass" layoutX="54.0" layoutY="243.0" minHeight="27.0" prefHeight="27.0" prefWidth="258.0" promptText="Confirm Password" />
-            <Button layoutX="303.0" layoutY="-29.0" onAction="#closeButton" prefHeight="42.0" prefWidth="33.0" style="-fx-background-color: #333333;" textFill="#333333" wrapText="true">
+            <Button layoutX="1064.0" layoutY="5.0" onAction="#closeButton" prefHeight="42.0" prefWidth="33.0" style="-fx-background-color: #333333;" textFill="#333333" wrapText="true">
                <font>
                   <Font name="Segoe UI Black" size="10.0" />
                </font>
@@ -149,50 +235,16 @@
                   </ImageView>
                </graphic>
             </Button>
-            <DatePicker fx:id="date_of_birth" layoutX="56.0" layoutY="301.0" prefHeight="25.0" prefWidth="116.0" />
-            <Label layoutX="58.0" layoutY="278.0" text="Date of Birth" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            
+                                    <Label alignment="CENTER" layoutX="671.0" layoutY="-5.0" prefHeight="47.0" prefWidth="316.0" text="Signup" textAlignment="CENTER" textFill="#f7f2e7" wrapText="true">
                <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
+                  <Font name="Segoe UI Black" size="25.0" />
                </font>
-            </Label>
-            <MenuButton fx:id="institute" layoutX="185.0" layoutY="301.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Institute">
-              <items>
-                <MenuItem mnemonicParsing="false" text="MIST" />
-                <MenuItem mnemonicParsing="false" text="BUET" />
-              </items>
-            </MenuButton>
-            <Label layoutX="187.0" layoutY="278.0" text="Select Institute" textAlignment="CENTER" textFill="#f7f2e7" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="doesnt_match_text" layoutX="222.0" layoutY="221.0" prefHeight="19.0" prefWidth="88.0" textAlignment="CENTER" textFill="#df322f" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="userblank" layoutX="232.0" layoutY="61.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="passblank1" layoutX="232.0" layoutY="114.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="passblank" layoutX="232.0" layoutY="171.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="11.0" />
-               </font>
-            </Label>
-            <Label fx:id="passblank2" layoutX="232.0" layoutY="223.0" text="Can't be blank!" textAlignment="CENTER" textFill="#ff5c33" textOverrun="CENTER_ELLIPSIS" visible="false" wrapText="true">
-               <font>
-                  <Font name="Segoe UI Semibold Italic" size="11.0" />
-               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </Label>
          </children>
       </Pane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-   </children>
-</AnchorPane>
+   </top>
+</BorderPane>

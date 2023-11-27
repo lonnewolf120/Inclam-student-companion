@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import codenamex.smc.gui.components.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import codenamex.smc.gui.components.MainMenuBar?>
-
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8"
-      fx:controller="codenamex.smc.gui.components.MainController">
+      prefHeight="640.0" prefWidth="640.0" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="codenamex.smc.gui.components.MainController">
    <children>
-      <MainMenuBar fx:id="mainMenuBar" minHeight="30" minWidth="1000" ></MainMenuBar>
+      <MainMenuBar fx:id="mainMenuBar" minHeight="30" minWidth="640.0" prefWidth="640.0" />
       <TabPane fx:id="tabPane" prefHeight="10000" prefWidth="10000">
         <tabs>
 

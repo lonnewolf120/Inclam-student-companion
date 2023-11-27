@@ -41,7 +41,7 @@ import static codenamex.smc.Database.Const.*;
 
 public class dashboard implements Initializable {
 
-    Stage stage;
+    static Stage stage;
     @FXML
     private Button AddTask;
 
@@ -104,12 +104,17 @@ public class dashboard implements Initializable {
     private BorderPane window;
     @FXML
     private Button refreshButton;
-
+    @FXML
+    private AnchorPane tableAnchor;
+//    @FXML
+//    private ScrollPane todoBox;
     private Integer priority;
     private Integer update = 0;
 
     static ObservableList<TaskProperty> tasksList = FXCollections.observableArrayList();
 
+//    public static void closeButton(MouseEvent e) {
+//    }
 
 
     public void ToggleSwitch()
@@ -168,6 +173,10 @@ public class dashboard implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ToggleSwitch();
         prioritySetter();
+        tableAnchor.setTopAnchor(todoBox, 0.0);
+        tableAnchor.setBottomAnchor(todoBox, 0.0);
+        tableAnchor.setLeftAnchor(todoBox, 0.0);
+        tableAnchor.setRightAnchor(todoBox, 0.0);
         try {
 
             //set the TableView columns
@@ -311,7 +320,7 @@ public class dashboard implements Initializable {
         ObservableList<TaskProperty> tasks = FXCollections.observableArrayList();
         try
         {
-            String sql = "SELECT priority, headline, description, deadline, completed FROM userdata.tasks;";
+            String sql = "SELECT priority, headline, description, deadline, completed FROM userdata.tasks WHERE `user_id` = "+Login.getUserId() +";";
             PreparedStatement preparedStatement = DatabaseManager.connectDB().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next())
@@ -400,7 +409,7 @@ public class dashboard implements Initializable {
         descriptionText.setText(td);
     }
     @FXML
-    void closeButton(ActionEvent e) {
+    static void closeButton(ActionEvent e) {
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.close();
     }
@@ -408,5 +417,24 @@ public class dashboard implements Initializable {
 
     public void swtichToNotes(ActionEvent e) throws IOException {
         sceneController.switchToNotes(e);
+    }
+
+    public void switchToEditor(ActionEvent E) throws IOException {
+        sceneController.switchControlsAction(EDITOR_MAIN,E);
+    }
+    public void switchToUser(ActionEvent E) throws IOException {
+        sceneController.switchControlsAction(USER_DASHBOARD,E);
+    }
+
+    public void switchToStack(MouseEvent mouseEvent) {
+
+    }
+
+    public void switchToTutorial(ActionEvent actionEvent) throws IOException {
+        sceneController.switchToTutorial(actionEvent);
+    }
+
+    public void closeButton(MouseEvent mouseEvent) {
+        sceneController.closeButton(mouseEvent);
     }
 }

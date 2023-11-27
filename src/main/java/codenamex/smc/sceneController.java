@@ -3,7 +3,9 @@ package codenamex.smc;
 //import codenamex.smc.Login;
 //import codenamex.smc.RegisterUser;
 //import io.github.palexdev.materialfx.controls.*;
+//import codenamex.smc.DSViz.*;
 import javafx.event.ActionEvent;
+import codenamex.smc.viz.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -97,7 +99,44 @@ public class sceneController {
     public void ForgotPasswordSubmit(ActionEvent actionEvent) {
     }
 
+    public void swtichToNotes(ActionEvent a) throws IOException {
+        switchControlsAction(NOTE_HOME,a);
+    }
 
+    public void switchToEditor(ActionEvent a) throws IOException {
+        switchControlsAction(EDITOR_MAIN,a);
+    }
+
+    public static void closeButton(MouseEvent e) {
+        ((Stage) ((Node)e.getSource()).getScene().getWindow()).close();
+    }
+    public static void closeButtonA(ActionEvent e) {
+        ((Stage) ((Node)e.getSource()).getScene().getWindow()).close();
+    }
+    public void switchToStack(MouseEvent e) throws IOException {
+        switchControls(e, STACK_PAGE);
+    }
+
+    public void switchToQueue(MouseEvent e) throws IOException {
+        switchControls(e,QUEUE_PAGE);
+    }
+    public static void switchToTutorial(ActionEvent e) throws IOException {
+        switchControlsAction(TUTORIAL_HOME,e);
+    }
+    public void switchToEditor(MouseEvent e) throws IOException {
+        switchControls(e,TUTORIAL_HOME);
+    }
+
+    public void switchToBST(MouseEvent e) {
+        BSTAnimation bst = new BSTAnimation();
+        bst.main(new String[]{});
+    }
+    public static void BackButton(ActionEvent e) throws IOException {
+        switchControlsAction(TUTORIAL_HOME,e);
+    }
+
+//    public void closeButtonA(ActionEvent actionEvent) {
+//    }
 
 
     ///TODO--------LOGIN SEGMENT (make separate java file)--------

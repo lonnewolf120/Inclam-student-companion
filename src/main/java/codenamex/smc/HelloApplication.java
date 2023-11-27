@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
 
         Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource(LOGIN_PAGE))));
 
-        stage.initStyle(StageStyle.TRANSPARENT);
+//        stage.initStyle(StageStyle.TRANSPARENT);
         ViewStyles.MoveAbleWindow(stage,root);   //Moveable window option
         stage.setScene(new Scene(root));
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/Logos/notes2.png")));
