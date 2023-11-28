@@ -34,9 +34,9 @@ public class EditorMain extends Application {
         scene.getStylesheets().add(this.getClass().getResource(EDITOR_STYLE).toExternalForm());
 
         primaryStage.setScene(scene);
-        primaryStage.setMinHeight(640);
-        primaryStage.setMinWidth(640);
-        primaryStage.setTitle("untitled");
+        primaryStage.setMinHeight(1280);
+        primaryStage.setMinWidth(720);
+        primaryStage.setTitle("Text Editor [ift]");
         primaryStage.setOnCloseRequest(event -> {
             EditorUtils.onCloseExitConfirmation();
             event.consume();
