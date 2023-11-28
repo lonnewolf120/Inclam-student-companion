@@ -5,14 +5,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import codenamex.smc.todo.add_item_controller;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+
+import static codenamex.smc.Database.Const.EDIT_BUTTON;
 
 public class editTaskInfo implements Initializable {
 
@@ -113,8 +118,17 @@ public class editTaskInfo implements Initializable {
         TaskProperty newTask = new TaskProperty(priority,newHeadline,newDescription,newDate,iscomp);
         add_item_controller.edit(taskP, 2); //0 -> insert, 1 -> update
         add_item_controller.edit(newTask,0);
+        Alert alt = new Alert(Alert.AlertType.INFORMATION);
+        alt.setHeaderText("Edited successfully");
+        alt.setTitle("Edit task");
+        ImageView imgV = new ImageView(); Image img = new Image(getClass().getResourceAsStream(EDIT_BUTTON)); imgV.setImage(img);
+        imgV.setFitWidth(35); imgV.setFitHeight(35);
+        alt.setGraphic(imgV);
+        alt.setContentText("The task has been edited successfully!");
+        alt.show();
+        ((Stage) ((Node)e.getSource()).getScene().getWindow()).close();
 //        wbp = true;
-        currentStage.close();
+//        currentStage.close();
 //        dashboard.refreshData();
     }
     public  void cancelButtonClicked(ActionEvent e)

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
-    <root id="1"/>
+    <root id="1">
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.34</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
@@ -911,8 +915,8 @@
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="291" parent="1" name="userdata">
-      <IntrospectionTimestamp>2023-11-24.04:50:44</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-23.16:50:44</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-29.11:24:05</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-28.23:24:05</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="292" parent="1" name="mysql.infoschema">
@@ -971,7 +975,7 @@
       <DasType>varchar(45)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="304" parent="296" name="institute">
+    <column id="304" parent="296" name="gender">
       <DasType>varchar(45)|0s</DasType>
       <Position>6</Position>
     </column>
@@ -1008,23 +1012,21 @@
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="312" parent="297" name="id">
-      <ColNames>id</ColNames>
+    <column id="312" parent="297" name="userID">
+      <DasType>int|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="313" parent="297" name="userID">
+      <ColNames>userID</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>login_info</RefTableName>
     </foreign-key>
-    <index id="313" parent="297" name="PRIMARY">
-      <ColNames>id</ColNames>
+    <index id="314" parent="297" name="user_id_idx">
+      <ColNames>userID</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <key id="314" parent="297" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
     <column id="315" parent="298" name="taskid">
-      <AutoIncrement>40</AutoIncrement>
+      <AutoIncrement>67</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

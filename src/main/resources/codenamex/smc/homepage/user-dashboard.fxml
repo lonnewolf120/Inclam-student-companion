@@ -15,13 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="window" prefHeight="779.0" prefWidth="1394.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.dashboard">
+<BorderPane fx:id="window" prefHeight="779.0" prefWidth="1394.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.userDashboard">
    <left>
       <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>
             <VBox layoutX="22.0" layoutY="52.0" prefHeight="412.0" prefWidth="148.0" spacing="15.0">
                <children>
-                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="TASKS">
+                  <Button alignment="TOP_LEFT" onAction="#switchToTasks" prefHeight="25.0" prefWidth="173.0" text="TASKS">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -57,7 +57,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="TUTORIALS">
+                  <Button alignment="TOP_LEFT" onAction="#switchToTutorial" prefHeight="25.0" prefWidth="173.0" text="TUTORIALS">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -81,7 +81,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" text="USER">
+                  <Button alignment="TOP_LEFT" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #666666;" text="USER">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -134,7 +134,85 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button layoutX="1096.0" layoutY="7.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="56.0">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/Game%20Controller.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="66.0" layoutY="80.0" prefHeight="399.0" prefWidth="331.0">
+               <children>
+                  <ImageView fx:id="Avatar" fitHeight="234.0" fitWidth="239.0" layoutX="46.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/Avatar/batman.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="ChangeAvatar" layoutX="50.0" layoutY="280.0" mnemonicParsing="false" onAction="#UpdateAvatar" prefHeight="47.0" prefWidth="232.0" text="Change Avatar">
+                     <font>
+                        <Font name="Comic Sans MS" size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <AnchorPane layoutX="416.0" layoutY="95.0" prefHeight="530.0" prefWidth="743.0">
+               <children>
+                  <Label layoutX="39.0" layoutY="43.0" text="Username">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="135.0" text="Email">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="219.0" text="Date Of Birth">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="313.0" text="Gender">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userName" layoutX="311.0" layoutY="40.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Email" layoutX="312.0" layoutY="134.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="DOB" layoutX="312.0" layoutY="220.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Gender" layoutX="315.0" layoutY="313.0">
+                     <font>
+                        <Font name="Segoe UI Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ChangeInfo" layoutX="257.0" layoutY="443.0" mnemonicParsing="false" onAction="#UpdateInfo" prefHeight="64.0" prefWidth="265.0" text="Change Info">
+                     <font>
+                        <Font name="Comic Sans MS" size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

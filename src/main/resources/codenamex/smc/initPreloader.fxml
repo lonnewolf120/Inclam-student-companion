@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.InitPreloader">
+<children>
+      <Label fx:id="lblLoading" layoutX="14.0" layoutY="185.0" text="loading..." AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <ProgressBar layoutX="15.0" layoutY="156.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label alignment="CENTER" layoutX="100.0" layoutY="33.0" text="Welcome" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="33.0">
+         <font>
+            <Font name="Segoe UI Black" size="21.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="146.0" layoutY="78.0" prefHeight="46.0" prefWidth="322.0" text="JAVA project by Group-5E">
+         <font>
+            <Font name="Segoe UI Black" size="21.0" />
+         </font>
+      </Label>
+      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="186.0" layoutY="137.0" />
+   </children>
+</AnchorPane>

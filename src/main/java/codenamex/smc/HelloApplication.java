@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static codenamex.smc.Database.Const.LOGIN_PAGE;
+import static codenamex.smc.Database.Const.MAIN_SCREEN;
 
 public class HelloApplication extends Application {
 
@@ -19,9 +20,9 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource(LOGIN_PAGE))));
+        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource(MAIN_SCREEN))));
 
-//        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
         ViewStyles.MoveAbleWindow(stage,root);   //Moveable window option
         stage.setScene(new Scene(root));
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/Logos/notes2.png")));

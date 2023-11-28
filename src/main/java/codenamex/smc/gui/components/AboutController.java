@@ -32,7 +32,7 @@ public class AboutController {
 
         String githubURL = "https://github.com/lonnewolf120";
         try {
-            if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) {
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
                 Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + githubURL);
             }
             Runtime.getRuntime().exec("xdg-open " + githubURL);

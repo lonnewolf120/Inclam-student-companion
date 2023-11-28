@@ -51,10 +51,10 @@ public class RegisterUser {
 
     if (selectedItem != null) {
         String gend = selectedItem.getText();
-        System.out.println("Selected Gender: " + gend);
+        System.out.println("Selected Institute: " + gend);
         // You can update UI or perform any other actions based on the selected gender
     } else {
-        System.out.println("No gender selected");
+        System.out.println("No Institute selected");
     }
     }
 

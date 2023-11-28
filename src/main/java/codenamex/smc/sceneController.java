@@ -4,14 +4,20 @@ package codenamex.smc;
 //import codenamex.smc.RegisterUser;
 //import io.github.palexdev.materialfx.controls.*;
 //import codenamex.smc.DSViz.*;
+import codenamex.smc.Database.Login;
+import javafx.application.Application;
+import codenamex.smc.tictactoe.*;
 import javafx.event.ActionEvent;
 import codenamex.smc.viz.*;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import java.io.IOException;
 import java.util.Objects;
 
@@ -61,6 +67,7 @@ public class sceneController {
 //            root = FXMLLoader.load(resource);
         root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
             stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
+            stage.initStyle(StageStyle.DECORATED);
             scene = new Scene(root);
             MoveAbleWindow();   //Moveable window option
 //        stage.initStyle(StageStyle.UNDECORATED);
@@ -73,6 +80,10 @@ public class sceneController {
     public static void switchToSignup(MouseEvent e) throws IOException {
         switchControls(e,SIGNUP_PAGE);
     }
+    @FXML
+    public static void launchTicTacToe(ActionEvent e){
+        new TicTacToeGui().setVisible(true);
+    }
     public static void switchToSignupA(ActionEvent e) throws IOException {
        switchControlsAction(SIGNUP_PAGE, e);
     }
@@ -82,9 +93,9 @@ public class sceneController {
     public static void switchToLogin(MouseEvent e) throws IOException {
         switchControls(e,LOGIN_PAGE);
     }
-    public static void switchToFP(MouseEvent e) throws IOException {
-        switchControls(e,FP_PAGE);
-    }
+//    public static void switchToFP(ActionEvent e) throws IOException {
+//        switchControlsAction(FP_PAGE,e);
+//    }
     public static void switchToTasks(ActionEvent e) throws IOException {
         switchControlsAction(TASK_DASHBOARD,e);
     }
@@ -96,6 +107,10 @@ public class sceneController {
         stage.close();
     }
 
+//    public static void switchToTutorial(ActionEvent actionEvent) throws IOException {
+//        switchControlsAction(TUTORIAL_HOME,actionEvent);
+//    }
+
     public void ForgotPasswordSubmit(ActionEvent actionEvent) {
     }
 
@@ -103,7 +118,7 @@ public class sceneController {
         switchControlsAction(NOTE_HOME,a);
     }
 
-    public void switchToEditor(ActionEvent a) throws IOException {
+    public static void switchToEditor(ActionEvent a) throws IOException {
         switchControlsAction(EDITOR_MAIN,a);
     }
 
@@ -124,16 +139,40 @@ public class sceneController {
         switchControlsAction(TUTORIAL_HOME,e);
     }
     public void switchToEditor(MouseEvent e) throws IOException {
-        switchControls(e,TUTORIAL_HOME);
+        switchControls(e,EDITOR_MAIN);
     }
 
-    public void switchToBST(MouseEvent e) {
-        BSTAnimation bst = new BSTAnimation();
-        bst.main(new String[]{});
+     public void switchToBST() {
+        try {
+            // Create an instance of BSTAnimation
+            BSTAnimation bstAnimation = new BSTAnimation();
+
+            // Initialize the new stage
+            Stage newStage = new Stage();
+
+            // Set up the stage as needed
+            // ...
+
+            // Call a method in BSTAnimation to perform any additional setup
+            bstAnimation.initialize(newStage);
+
+            // Show the new stage
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public static void BackButton(ActionEvent e) throws IOException {
         switchControlsAction(TUTORIAL_HOME,e);
     }
+
+
+
+
+//    public void launchTicTacToe(ActionEvent event) {
+//        sceneController.launchTicTacToe(event);
+//    }
+
 
 //    public void closeButtonA(ActionEvent actionEvent) {
 //    }

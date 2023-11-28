@@ -46,7 +46,7 @@ public class Login {
     public void loginAdmin(ActionEvent e) {
         userId = -1; // Initialize with an invalid value if the login is unsuccessful
 
-        String sql_command = "SELECT user_id FROM login_info WHERE username = ? AND password = ?;";
+        String sql_command = "SELECT user_id FROM `userdata`.`login_info` WHERE username = ? AND password = ?;";
         Connection connect = connectDB();
 
         try {
@@ -90,10 +90,7 @@ public class Login {
         sceneController.closeButtonA(e);
     }
 
-    public void switchToFP(MouseEvent e) throws IOException {
-        System.out.println("Moving to Forget password page");
-        sceneController.switchToFP(e);
-    }
+
 
     public void switchToSignup(MouseEvent e) throws IOException {
 
@@ -102,15 +99,14 @@ public class Login {
     }
     public void switchToFP(ActionEvent e) throws IOException {
         System.out.println("Moving to Forget password page");
-        fpb.setText("Going to Forget Password Tab");
+//        fpb.setText("Going to Forget Password Tab");
         sceneController.switchControlsAction(FP_PAGE,e);
     }
 
     public void switchToSignup(ActionEvent e) throws IOException {
 
         System.out.println("Moving to Signup page");
-
-        signup_button.setText("Going to Signup Tab");
+//        signup_button.setText("Going to Signup Tab");
         sceneController.switchControlsAction(SIGNUP_PAGE,e);
     }
 

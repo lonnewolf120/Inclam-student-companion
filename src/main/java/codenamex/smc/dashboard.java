@@ -86,7 +86,7 @@ public class dashboard implements Initializable {
     @FXML
     private TableColumn<TaskProperty, SimpleIntegerProperty> PriorityCol;
     @FXML
-    private TableColumn<TaskProperty, SimpleBooleanProperty> CompletedCol;
+    private TableColumn<TaskProperty, Boolean> CompletedCol;
     @FXML
     private TableColumn<TaskProperty, String> editCol;
 
@@ -184,7 +184,75 @@ public class dashboard implements Initializable {
             TaskCol.setCellValueFactory(new PropertyValueFactory<>("description"));
             DateCol.setCellValueFactory(new PropertyValueFactory<>("deadline"));
             PriorityCol.setCellValueFactory(new PropertyValueFactory<>("priority"));
-            CompletedCol.setCellValueFactory(new PropertyValueFactory<>("completed"));
+//            CompletedCol.setCellValueFactory(new PropertyValueFactory<>("completed"));
+
+            Callback<TableColumn<TaskProperty, Boolean>, TableCell<TaskProperty, Boolean>> cmpltFoctory = (TableColumn<TaskProperty, Boolean> param) -> {
+    // make cell containing buttons
+            final TableCell<TaskProperty, Boolean> cell = new TableCell<TaskProperty, Boolean>() {
+                Boolean isChecked = false;
+                @Override
+                public void updateItem(Boolean item, boolean empty) {
+                    super.updateItem(item, empty);
+                    // that cell created only on non-empty rows
+                    if (empty) {
+                        setGraphic(null);
+                        setText(null);
+                    } else {
+                        String edPath = "/images/Logos/checked.png";
+                        Image image1 = new Image(getClass().getResourceAsStream(edPath));
+                        ImageView editIcon = new ImageView();
+                        editIcon.setImage(image1);
+                        editIcon.setFitHeight(25);
+                        editIcon.setFitWidth(25);
+
+                        String deletePath = "/images/Logos/unchecked.png";
+                        Image image2 = new Image(getClass().getResourceAsStream(deletePath));
+                        ImageView deleteIcon = new ImageView();
+                        deleteIcon.setImage(image2);
+                        deleteIcon.setFitHeight(25);
+                        deleteIcon.setFitWidth(25);
+
+                        // FontAwesomeIconView deleteIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                        // FontAwesomeIconView editIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
+
+                        editIcon.setStyle(
+                                " -fx-cursor: hand ;"
+                                + "-glyph-size:28px;"
+                                + "-fx-fill:#00E676;"
+                        );
+                        editIcon.setOnMouseClicked((MouseEvent event) -> {
+                            TaskProperty task = getTableView().getItems().get(getIndex());
+                            isChecked = task.getCompleted();
+                            isChecked = !isChecked;
+//                            if(isChecked)
+//                            {
+//                                isChecked = !isChecked;
+                                String sql = "UPDATE `userdata`.`tasks` SET `completed` = ? WHERE `user_id` = ?";
+                                Connection con = DatabaseManager.connectDB();
+                            try {
+                                PreparedStatement prepare = con.prepareStatement(sql);
+                                prepare.setBoolean(1, isChecked);
+                                prepare.setInt(2, Login.getUserId());
+                                ResultSet res = prepare.executeQuery();
+
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            }
+                            if(isChecked)setGraphic(editIcon);
+                            else setGraphic(deleteIcon);
+
+                        });
+
+                        if(isChecked)setGraphic(editIcon);
+                        else setGraphic(deleteIcon);
+                        setText(null);
+                    }
+                }
+            };
+            return cell;
+        };
+
+        CompletedCol.setCellFactory(cmpltFoctory);
 
             Callback<TableColumn<TaskProperty, String>, TableCell<TaskProperty, String>> cellFoctory = (TableColumn<TaskProperty, String> param) -> {
                 // make cell containing buttons
@@ -228,7 +296,7 @@ public class dashboard implements Initializable {
                     deleteIcon.setOnMouseClicked((MouseEvent event) -> {
                         try {
                             TaskProperty student = getTableView().getItems().get(getIndex());
-                            java.lang.String query =("DELETE FROM `tasks` WHERE headline = ?");
+                            java.lang.String query =("DELETE FROM `userdata`.`tasks` WHERE headline = ?");
                             Connection connection = DatabaseManager.connectDB();
                             PreparedStatement preparedStatement = connection.prepareStatement(query);
                             preparedStatement.setString(1,student.getHeadline());
@@ -320,8 +388,9 @@ public class dashboard implements Initializable {
         ObservableList<TaskProperty> tasks = FXCollections.observableArrayList();
         try
         {
-            String sql = "SELECT priority, headline, description, deadline, completed FROM userdata.tasks WHERE `user_id` = "+Login.getUserId() +";";
+            String sql = "SELECT priority, headline, description, deadline, completed FROM userdata.tasks WHERE `user_id` = ? ;";
             PreparedStatement preparedStatement = DatabaseManager.connectDB().prepareStatement(sql);
+            preparedStatement.setInt(1,Login.getUserId());
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next())
             {
@@ -379,6 +448,7 @@ public class dashboard implements Initializable {
             alert.setTitle("Confirmation");
             alert.setHeaderText("Delete Task");
             alert.setContentText("Are you sure you want to delete this task?");
+            alert.show();
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -436,5 +506,9 @@ public class dashboard implements Initializable {
 
     public void closeButton(MouseEvent mouseEvent) {
         sceneController.closeButton(mouseEvent);
+    }
+
+    public void gameOn(ActionEvent e) {
+        sceneController.launchTicTacToe(e);
     }
 }

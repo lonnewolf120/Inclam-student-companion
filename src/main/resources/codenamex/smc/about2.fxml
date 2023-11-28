@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="183.0" prefWidth="290.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.AboutController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="585.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.AboutController">
    <children>
-      <Button fx:id="okButton" layoutX="119.0" layoutY="129.0" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="31.0" prefWidth="62.0" text="close">
+      <Button fx:id="okButton" layoutX="264.0" layoutY="286.0" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="31.0" prefWidth="62.0" text="close">
          <font>
             <Font size="14.0" />
          </font>
          <effect>
             <Reflection />
          </effect></Button>
-      <Text fx:id="aboutText" fill="WHITE" layoutX="68.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grp-04 Project" wrappingWidth="258.986328125">
+      <Text fx:id="aboutText" fill="WHITE" layoutX="21.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grp-5E Project" wrappingWidth="172.5863494873047">
          <font>
             <Font size="21.0" />
          </font>
@@ -23,14 +27,14 @@
             <Glow />
          </effect>
       </Text>
-      <Hyperlink fx:id="githubLink" layoutX="15.0" layoutY="56.0" onAction="#githubLinkOnAction" prefHeight="31.0" prefWidth="119.0" text="Project Github" textFill="#4df0ff">
+      <Hyperlink fx:id="githubLink" layoutX="21.0" layoutY="199.0" onAction="#githubLinkOnAction" prefHeight="31.0" prefWidth="119.0" text="Project Github" textFill="#4df0ff">
          <effect>
             <Reflection fraction="0.62" topOpacity="0.43" />
          </effect>
          <font>
             <Font size="17.0" />
          </font></Hyperlink>
-      <ImageView fitHeight="70.0" fitWidth="92.0" layoutX="188.0" layoutY="40.0" onMouseClicked="#githubLinkOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="70.0" fitWidth="92.0" layoutX="49.0" layoutY="103.0" onMouseClicked="#githubLinkOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/Logos/notes2.png" />
          </image>
@@ -38,5 +42,50 @@
             <Glow />
          </effect>
       </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="94.0" layoutX="207.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons/333057603_3297527650559400_1295243625779456830_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="105.0" layoutX="325.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons/arqam.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="210.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iftekharul Islam" textAlignment="CENTER" wrappingWidth="93.59999999999991">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="208.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code &amp; Design:" wrappingWidth="105.00000000000006">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="323.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Offline tutorials:" wrappingWidth="105.00000000000006">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="326.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arqam Bin Almas" textAlignment="CENTER" wrappingWidth="93.59999999999991">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="463.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auth UI :" wrappingWidth="62.66665039062491">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="90.0" fitWidth="105.0" layoutX="451.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons/_e7674a4f-9efc-434b-9b1d-1cd35c5520f5.jpeg" />
+         </image>
+      </ImageView>
+      <Text layoutX="448.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maj. Abdullah Faisal" textAlignment="CENTER" wrappingWidth="93.59999999999991">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
