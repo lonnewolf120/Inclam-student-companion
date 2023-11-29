@@ -4,8 +4,6 @@ package codenamex.smc;
 //import codenamex.smc.RegisterUser;
 //import io.github.palexdev.materialfx.controls.*;
 //import codenamex.smc.DSViz.*;
-import codenamex.smc.Database.Login;
-import javafx.application.Application;
 import codenamex.smc.tictactoe.*;
 import javafx.event.ActionEvent;
 import codenamex.smc.viz.*;
@@ -15,10 +13,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -58,7 +54,7 @@ public class sceneController {
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
-    public static void switchControlsAction(String view, ActionEvent e) throws IOException{
+    public static void switchControls(String view, ActionEvent e) throws IOException{
 //        URL resource = ((sceneController.class.getResource(view)));
 //        if(resource==null){
 //            System.err.println("Error: Resource not found - " + view);
@@ -87,10 +83,10 @@ public class sceneController {
         new TicTacToeGui().setVisible(true);
     }
     public static void switchToSignupA(ActionEvent e) throws IOException {
-       switchControlsAction(SIGNUP_PAGE, e);
+       switchControls(SIGNUP_PAGE, e);
     }
     public static void switchToLoginA(ActionEvent e) throws IOException {
-        switchControlsAction(LOGIN_PAGE,e);
+        switchControls(LOGIN_PAGE,e);
     }
     public static void switchToLogin(MouseEvent e) throws IOException {
         switchControls(e,LOGIN_PAGE);
@@ -99,10 +95,10 @@ public class sceneController {
 //        switchControlsAction(FP_PAGE,e);
 //    }
     public static void switchToTasks(ActionEvent e) throws IOException {
-        switchControlsAction(TASK_DASHBOARD,e);
+        switchControls(TASK_DASHBOARD,e);
     }
     public static void switchToNotes(ActionEvent e) throws IOException {
-        switchControlsAction(NOTE_HOME,e);
+        switchControls(NOTE_HOME,e);
     }
     public static void closeButton(ActionEvent e){
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
@@ -117,11 +113,11 @@ public class sceneController {
     }
 
     public void swtichToNotes(ActionEvent a) throws IOException {
-        switchControlsAction(NOTE_HOME,a);
+        switchControls(NOTE_HOME,a);
     }
 
     public static void switchToEditor(ActionEvent a) throws IOException {
-        switchControlsAction(EDITOR_MAIN,a);
+        switchControls(EDITOR_MAIN,a);
     }
 
     public static void closeButton(MouseEvent e) {
@@ -138,7 +134,7 @@ public class sceneController {
         switchControls(e,QUEUE_PAGE);
     }
     public static void switchToTutorial(ActionEvent e) throws IOException {
-        switchControlsAction(TUTORIAL_HOME,e);
+        switchControls(TUTORIAL_HOME,e);
     }
     public void switchToEditor(MouseEvent e) throws IOException {
         FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
@@ -177,15 +173,15 @@ public class sceneController {
         }
     }
     public static void BackButton(ActionEvent e) throws IOException {
-        switchControlsAction(TUTORIAL_HOME,e);
+        switchControls(TUTORIAL_HOME,e);
     }
 
     public static void switchToViz(ActionEvent event) throws IOException {
-        sceneController.switchControlsAction(WEB_DASHBOARD,event);
+        sceneController.switchControls(WEB_DASHBOARD,event);
     }
 
     public static void switchToUser(ActionEvent event) throws IOException {
-        sceneController.switchControlsAction(USER_DASHBOARD,event);
+        sceneController.switchControls(USER_DASHBOARD,event);
 //        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(USER_DASHBOARD));
 //				BorderPane pane1 = null;
 //				try {

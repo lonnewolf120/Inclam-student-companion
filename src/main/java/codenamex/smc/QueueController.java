@@ -29,7 +29,7 @@ public class QueueController {
     private int front;
     private int rear;
     private int size;
-    private final int MAX_SIZE=15;
+    private final int MAX_SIZE=3;
     public QueueController()
     {
         q=new StackPane[MAX_SIZE];

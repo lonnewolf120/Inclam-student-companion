@@ -80,6 +80,7 @@ public class userDashboard implements Initializable {
 
     @FXML
     void saveButtonEdit(ActionEvent event) throws SQLException, IOException {
+
         String sql = "UPDATE `userdata`.`login_info` SET `username` = ?,"+
         "`email` = ?, `date_of_birth` = ?, `gender` = ? WHERE `user_id` = ?;";
         Connection con = DatabaseManager.connectDB();
@@ -90,32 +91,33 @@ public class userDashboard implements Initializable {
         prepare.setString(4, insL.getText());
         prepare.setInt(5, Login.getUserId());
 
-        ResultSet res = prepare.executeQuery();
-        if(res.next())
+        Boolean res = prepare.execute();
+        if(res)
             CustomAlert.showInfoAlert("Credentials changed", "The changes has been saved!", EDIT_BUTTON);
         else
             CustomAlert.showInfoAlert("Credentials Unchanged", "The changes couldn't be changed!", CANCEL_BUTTON);
 
-        sceneController.switchControlsAction(USER_DASHBOARD,event);
+        sceneController.switchControls(USER_DASHBOARD,event);
     }
 
+//    @FXML
+//    private BorderPane window;
     @FXML
-    void UpdateInfo(ActionEvent event) throws SQLException, IOException {
-//        sceneController.switchControlsAction(USER_EDIT,event);
-        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(USER_EDIT));
-				BorderPane pane1 = null;
-				try {
-					pane1 = loader1.load();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-//				AddAdminController controller = loader1.getController();
-
-				Parent root = (Parent) pane1;
-				Stage stage = new Stage();
-				stage.setScene(new Scene(root));
-				stage.show();
+void UpdateInfo(ActionEvent event) throws SQLException, IOException {
+    FXMLLoader loader1 = new FXMLLoader(sceneController.class.getResource(USER_EDIT));
+    BorderPane pane1 = null;
+    try {
+        pane1 = loader1.load();
+    } catch (IOException e1) {
+        e1.printStackTrace();
     }
+
+    Parent root = loader1.getRoot(); // Use getRoot() instead of load() to get the loaded Parent
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
+}
+
 
     @FXML
     void closeButton(MouseEvent event) {
@@ -152,7 +154,27 @@ public class userDashboard implements Initializable {
          sceneController.switchToTutorial(event);
     }
 
-    @Override
+    public void refresh() {
+        String sql = "SELECT `username`,`email`,`date_of_birth`,`gender` FROM `userdata`.`login_info` WHERE `user_id`=?";
+        Connection con = DatabaseManager.connectDB();
+        PreparedStatement prepare = null;
+        try {
+            prepare = con.prepareStatement(sql);
+            prepare.setInt(1, Login.getUserId());
+
+            ResultSet res = prepare.executeQuery();
+            if (res.next()) {
+                userName.setText(res.getString("username"));
+                Email.setText(res.getString("email"));
+                DOB.setText(res.getString("date_of_birth"));
+                Gender.setText(res.getString("gender"));
+            }
+
+        } catch (Except | SQLException e) {
+            throw new Except("SQL Error, restart server!");
+        }
+    }
+        @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String sql = "SELECT `username`,`email`,`date_of_birth`,`gender` FROM `userdata`.`login_info` WHERE `user_id`=?";
         Connection con = DatabaseManager.connectDB();
@@ -168,6 +190,8 @@ public class userDashboard implements Initializable {
             Email.setText(res.getString("email"));
             DOB.setText(res.getString("date_of_birth"));
             Gender.setText(res.getString("gender"));
+//            if(DOB.getText().isEmpty()) DOB.setText("Not set");
+//            if(Gender.getText().isEmpty()) DOB.setText("Not set");
         }
         else
         {
@@ -188,6 +212,22 @@ public class userDashboard implements Initializable {
 
     public void switchToViz(ActionEvent event) throws IOException {
         sceneController.switchToViz(event);
+    }
+
+    public void changePass(ActionEvent event) {
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(FP_PAGE));
+				BorderPane pane1 = null;
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
     }
 
 //    public void switchToTasks(ActionEvent event) {

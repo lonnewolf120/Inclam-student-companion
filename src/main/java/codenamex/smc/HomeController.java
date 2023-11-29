@@ -164,7 +164,9 @@ public class HomeController implements Initializable {
 
                 FP.getChildren().add(NoteFXML);
             } catch (IOException ex) {
-                System.out.println(ex);
+//                System.out.println(ex);
+//                System.out.println();
+                ex.printStackTrace();
             }
         }
     }

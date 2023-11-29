@@ -65,7 +65,7 @@ public class RegisterUser {
         Date dob = Date.valueOf(date_of_birth.getValue());
 //        String gender = genderSelect.
         String insertFields = "INSERT INTO `userdata`.`login_info` (`username`, `password`,`email`,`date_of_birth`,`gender`) VALUES ('";
-        String insertValues = username + "','" + pass + "','" + email + "," + dob + "," + gend + "');";
+        String insertValues = username + "','" + pass + "','" + email + "," + dob + "," + gend + ");";
         String insertToRegister = insertFields + insertValues;    //#SQL command
         try {
             Statement statement = connect.createStatement();

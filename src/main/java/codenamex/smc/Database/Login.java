@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import static codenamex.smc.Database.Const.*;
 import static codenamex.smc.Database.DatabaseManager.connectDB;
@@ -58,7 +57,7 @@ public class Login {
 
             if (result.next()) {
                 userId = result.getInt("user_id"); // Get the user_id if the login is successful
-                sceneController.switchControlsAction(TASK_DASHBOARD, e);
+                sceneController.switchControls(TASK_DASHBOARD, e);
             } else {
                 afterLoginText.setText("Login Credentials don't match. Try again😅");
             }
@@ -100,14 +99,14 @@ public class Login {
     public void switchToFP(ActionEvent e) throws IOException {
         System.out.println("Moving to Forget password page");
 //        fpb.setText("Going to Forget Password Tab");
-        sceneController.switchControlsAction(FP_PAGE,e);
+        sceneController.switchControls(FP_PAGE,e);
     }
 
     public void switchToSignup(ActionEvent e) throws IOException {
 
         System.out.println("Moving to Signup page");
 //        signup_button.setText("Going to Signup Tab");
-        sceneController.switchControlsAction(SIGNUP_PAGE,e);
+        sceneController.switchControls(SIGNUP_PAGE,e);
     }
 
 }

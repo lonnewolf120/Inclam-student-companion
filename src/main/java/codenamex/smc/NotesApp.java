@@ -18,14 +18,20 @@ public class NotesApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(NOTE_HOME));
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(NOTE_HOME));
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/Logos/notes2.png")));
-        stage.setTitle("Note");
-        stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/Logos/notes2.png")));
+            stage.setTitle("Note");
+            stage.show();
+        }
+        catch (fxmlException e)
+        {
+            throw new fxmlException("Error loading "+ NOTE_HOME+"\n");
+        }
     }
 
     /**

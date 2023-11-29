@@ -61,7 +61,7 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
 				try {
 					pane1 = loader1.load();
 				} catch (IOException e1) {
-					e1.printStackTrace();
+//					e1.printStackTrace();
 				}
 //				AddAdminController controller = loader1.getController();
 

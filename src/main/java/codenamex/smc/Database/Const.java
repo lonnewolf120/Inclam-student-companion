@@ -6,7 +6,7 @@ public class Const {
     public static final String NOTES_TABLE = "notes";
     public static final String LOGIN_PAGE = "login.fxml";
     public static final String MAIN_SCREEN = "splashScreen.fxml";
-        public static final String WEBPAGE = "https://talkai.info/chat/";
+        public static final String WEBPAGE = "https://visualgo.net/en";
 
     public static final String TEAM_INFO = "about2.fxml";
     public static final String SIGNUP_PAGE = "signup.fxml";

@@ -1,17 +1,18 @@
 package codenamex.smc;
 
-public class Except extends RuntimeException {
+import java.io.IOException;
+
+public class fxmlException extends IOException {
     private String errorCode;
 
-    public Except(String message) {
+    public fxmlException(String message) {
         super(message);
 //        this.errorCode = errorCode;
     }
-    public Except(String message, String errorCode) {
+    public fxmlException(String message, String errorCode) {
         super(message);
         this.errorCode = errorCode;
     }
-
     public String getErrorCode() {
         return errorCode;
     }

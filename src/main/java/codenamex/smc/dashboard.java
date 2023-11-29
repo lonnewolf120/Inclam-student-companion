@@ -233,8 +233,9 @@ public class dashboard implements Initializable {
                                 prepare.setInt(2, Login.getUserId());
                                 ResultSet res = prepare.executeQuery();
 
-                            } catch (SQLException e) {
-                                throw new RuntimeException(e);
+                            } catch (Except | SQLException e) {
+                                throw new Except("SQL Error");
+//                                throw new RuntimeException(e);
                             }
                             if(isChecked)setGraphic(editIcon);
                             else setGraphic(deleteIcon);
@@ -301,9 +302,10 @@ public class dashboard implements Initializable {
                             preparedStatement.executeUpdate();
                             refreshData();
 //                            dashboard.refreshData();
-                        } catch (SQLException ex) {
+                        } catch (Except | SQLException ex) {
 //                            Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
-                            ex.printStackTrace();
+//                            ex.printStackTrace();
+                            throw new Except("SQL error, check command & restart server!");
                         }
                             });
                     editIcon.setOnMouseClicked((MouseEvent event) -> {
@@ -312,8 +314,9 @@ public class dashboard implements Initializable {
                                 loader.setLocation(getClass().getResource(ADD_TASK));
                                 try {
                                     loader.load();
-                                } catch (IOException ex) {
-                                    ex.printStackTrace();
+                                } catch (Except | IOException ex) {
+//                                    ex.printStackTrace();
+                                    throw new Except("Couldn't load ADD_TASK, check for errors in fxml");
 //                            Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
                                 }
                                 editTaskInfo addTask = loader.getController();
@@ -492,8 +495,9 @@ public class dashboard implements Initializable {
 				VBox pane1 = null;
 				try {
 					pane1 = loader1.load();
-				} catch (IOException e1) {
-					e1.printStackTrace();
+				} catch (fxmlException e1) {
+//					e1.printStackTrace();
+                    throw new fxmlException("Error loading "+EDITOR_MAIN+"\n");
 				}
 //				AddAdminController controller = loader1.getController();
 
@@ -503,7 +507,7 @@ public class dashboard implements Initializable {
 				stage.show();
     }
     public void switchToUser(ActionEvent E) throws IOException {
-        sceneController.switchControlsAction(USER_DASHBOARD,E);
+        sceneController.switchControls(USER_DASHBOARD,E);
     }
 
     public void switchToStack(MouseEvent mouseEvent) {

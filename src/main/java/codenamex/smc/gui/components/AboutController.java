@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -26,7 +25,7 @@ public class AboutController {
 
     @FXML
     void okButtonClicked(ActionEvent event) throws IOException {
-        sceneController.switchControlsAction(MAIN_SCREEN,event);
+        sceneController.switchControls(MAIN_SCREEN,event);
     }
 
     @FXML
