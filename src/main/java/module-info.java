@@ -18,6 +18,7 @@ module java.codenamex.smc {
     requires org.json;
     requires javafx.media;
     requires AnimateFX;
+    requires javafx.web;
 //    requires MaterialFX;
 
     opens codenamex.smc to javafx.fxml, javafx.graphics;

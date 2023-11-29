@@ -14,6 +14,21 @@
     -fx-base: #000908;
     -fx-background-color: #000908;
 }
+/* Maximize Button */
+.decoration-button-maximize {
+    -fx-graphic: url('/images/Logos/close2.png');
+}
+
+/* Minimize Button */
+.decoration-button-minimize {
+    -fx-graphic: url('/images/Logos/minimize.png');
+}
+
+/* Close Button */
+.decoration-button-close {
+    -fx-graphic: url('/images/Logos/maximize.png');
+}
+
 
 
 .label{
@@ -21,7 +36,7 @@
 }
 
 .text-field {
-    -fx-prompt-text-fill: gray;
+    -fx-prompt-text-fill: grey;
 }
 .datepicker{
     -fx-prompt-text-fill: white;
@@ -71,6 +86,32 @@
     -fx-alignment: CENTER_LEFT;
     -fx-font-weight: none;
 }
+/* Button Hover Animation */
+.decoration-button-maximize:hover,
+.decoration-button-minimize:hover,
+.decoration-button-close:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+
+/* Button Click Animation */
+.decoration-button-maximize:pressed,
+.decoration-button-minimize:pressed,
+.decoration-button-close:pressed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+
+.round-button:hover {
+    -fx-background-color: #00548A;
+}
+
+.round-button:pressed {
+    -fx-background-color: #003366;
+}
+
+
+.button:default {
+    -fx-base: -fx-accent;
+}
 
 .list-cell:even,
 .list-cell:odd,
@@ -89,4 +130,3 @@
     -fx-border-color: transparent;
     -fx-table-cell-border-color:transparent;
 }
-1

@@ -15,6 +15,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -67,7 +69,7 @@ public class sceneController {
 //            root = FXMLLoader.load(resource);
         root = FXMLLoader.load(Objects.requireNonNull(sceneController.class.getResource(view)));
             stage= (Stage) ((Node)e.getSource()).getScene().getWindow();
-            stage.initStyle(StageStyle.DECORATED);
+//            stage.initStyle(StageStyle.DECORATED);
             scene = new Scene(root);
             MoveAbleWindow();   //Moveable window option
 //        stage.initStyle(StageStyle.UNDECORATED);
@@ -81,7 +83,7 @@ public class sceneController {
         switchControls(e,SIGNUP_PAGE);
     }
     @FXML
-    public static void launchTicTacToe(ActionEvent e){
+    public void launchTicTacToe(ActionEvent e){
         new TicTacToeGui().setVisible(true);
     }
     public static void switchToSignupA(ActionEvent e) throws IOException {
@@ -139,7 +141,19 @@ public class sceneController {
         switchControlsAction(TUTORIAL_HOME,e);
     }
     public void switchToEditor(MouseEvent e) throws IOException {
-        switchControls(e,EDITOR_MAIN);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
+				VBox pane1 = null;
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
     }
 
      public void switchToBST() {
@@ -166,7 +180,39 @@ public class sceneController {
         switchControlsAction(TUTORIAL_HOME,e);
     }
 
+    public static void switchToViz(ActionEvent event) throws IOException {
+        sceneController.switchControlsAction(WEB_DASHBOARD,event);
+    }
 
+    public static void switchToUser(ActionEvent event) throws IOException {
+        sceneController.switchControlsAction(USER_DASHBOARD,event);
+//        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(USER_DASHBOARD));
+//				BorderPane pane1 = null;
+//				try {
+//					pane1 = loader1.load();
+//                    Parent root = (Parent) pane1;
+//				Stage stage = new Stage();
+//				stage.setScene(new Scene(root));
+//				stage.show();
+//				} catch (IOException e1) {
+//					e1.printStackTrace();
+//				}
+//				AddAdminController controller = loader1.getController();
+
+
+    }
+
+    public void switchToTask(ActionEvent event) throws IOException {
+        sceneController.switchToTasks(event);
+    }
+
+    public void switchToUserA(ActionEvent event) throws IOException {
+        switchToUser(event);
+    }
+
+    public void switchToVizA(ActionEvent event) throws IOException {
+        switchToViz(event);
+    }
 
 
 //    public void launchTicTacToe(ActionEvent event) {

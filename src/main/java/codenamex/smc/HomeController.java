@@ -323,4 +323,16 @@ public class HomeController implements Initializable {
     public void switchToTutorial(ActionEvent e) throws IOException {
         sceneController.switchToTutorial(e);
     }
+
+    public void switchToViz(ActionEvent event) throws IOException {
+        sceneController.switchToViz(event);
+    }
+
+    public void switchToEditor(ActionEvent event) throws IOException {
+        sceneController.switchToEditor(event);
+    }
+
+    public void switchToUser(ActionEvent event) throws IOException {
+        sceneController.switchToUser(event);
+    }
 }

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import codenamex.smc.utilities.EditorUtils;
@@ -25,14 +26,13 @@ public class EditorMain extends Application {
     private Stage newStage;
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         Font.loadFont(this.getClass().getResourceAsStream(ROBOTO_FONT), 16);
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource(EDITOR_MAIN));
-        Parent root = fxmlLoader.load();
 
+        Stage newStage = new Stage();
+        Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(this.getClass().getResource(EDITOR_STYLE).toExternalForm());
-
         primaryStage.setScene(scene);
         primaryStage.setMinHeight(1280);
         primaryStage.setMinWidth(720);
@@ -44,6 +44,8 @@ public class EditorMain extends Application {
         newStage = primaryStage;
         primaryStage.show();
         primaryStage.setOnCloseRequest(this::handleCloseRequest);
+
+
     }
     private void handleCloseRequest(WindowEvent event) {
         // Perform any cleanup or actions before closing

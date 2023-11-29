@@ -3,6 +3,7 @@ package codenamex.smc;
 import codenamex.smc.Database.Login;
 import codenamex.smc.Database.DatabaseManager;
 import codenamex.smc.model.TaskProperty;
+import codenamex.smc.tictactoe.TicTacToeGui;
 import javafx.beans.property.*;
 import codenamex.smc.design.ToggleSwitch;
 import javafx.collections.FXCollections;
@@ -20,10 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -490,7 +488,19 @@ public class dashboard implements Initializable {
     }
 
     public void switchToEditor(ActionEvent E) throws IOException {
-        sceneController.switchControlsAction(EDITOR_MAIN,E);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
+				VBox pane1 = null;
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
     }
     public void switchToUser(ActionEvent E) throws IOException {
         sceneController.switchControlsAction(USER_DASHBOARD,E);
@@ -509,6 +519,10 @@ public class dashboard implements Initializable {
     }
 
     public void gameOn(ActionEvent e) {
-        sceneController.launchTicTacToe(e);
+        new TicTacToeGui().setVisible(true);
+    }
+
+    public void switchToViz(ActionEvent event) throws IOException {
+        sceneController.switchToViz(event);
     }
 }

@@ -2,15 +2,15 @@
 
 <!--<?import com.jfoenix.controls.Button?>-->
 
-<?import codenamex.smc.gui.components.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 
-<BorderPane fx:id="window" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.MainController">
+<BorderPane fx:id="window" prefHeight="779.0" prefWidth="1394.0" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.webviewDash">
    <left>
       <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>
@@ -40,7 +40,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="TOP_LEFT" onAction="#switchToVIz" prefHeight="46.0" prefWidth="176.0" text="VISUALIZER">
+                  <Button alignment="TOP_LEFT" onAction="#switchToViz" prefHeight="46.0" prefWidth="176.0" text="VISUALIZER">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -106,8 +106,7 @@
    <top>
       <AnchorPane fx:id="topbar" prefHeight="53.0" prefWidth="1232.0" styleClass="pane" BorderPane.alignment="CENTER">
          <children>
-            <MainMenuBar fx:id="mainMenuBar" minHeight="30" minWidth="1000" prefHeight="49.0" prefWidth="1000.0" />
-            <Label contentDisplay="CENTER" layoutX="556.0" layoutY="2.0" prefHeight="43.0" prefWidth="191.0" text="Inclam Classroom" textFill="WHITE" AnchorPane.bottomAnchor="8.399999999999999" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="484.8" AnchorPane.topAnchor="2.0">
+            <Label contentDisplay="CENTER" layoutX="641.0" layoutY="4.0" prefHeight="44.0" prefWidth="185.0" text="Inclam Classroom" textFill="WHITE" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="641.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="4.0">
                <font>
                   <Font name="Impact" size="23.0" />
                </font>
@@ -115,7 +114,7 @@
                   <Glow level="0.39" />
                </effect>
             </Label>
-            <Button layoutX="1148.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButton" text="Exit" textFill="#fafafa" wrapText="true" AnchorPane.bottomAnchor="5.600000000000001" AnchorPane.leftAnchor="1148.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="4.0">
+            <Button layoutX="1303.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeButton" prefHeight="46.0" prefWidth="79.0" text="Exit" textFill="#fafafa" visible="false" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1303.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="4.0">
                <font>
                   <Font name="Segoe UI Black" size="10.0" />
                </font>
@@ -130,10 +129,23 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button layoutX="1325.0" layoutY="7.0" mnemonicParsing="false" onAction="#gameOn">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Logos/game.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <WebView fx:id="webView" prefHeight="726.0" prefWidth="1199.0" />
+         </children>
+      </AnchorPane>
    </center>
 </BorderPane>

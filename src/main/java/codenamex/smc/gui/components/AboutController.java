@@ -1,5 +1,6 @@
 package codenamex.smc.gui.components;
 
+import codenamex.smc.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +9,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static codenamex.smc.Database.Const.MAIN_SCREEN;
 
 
 public class AboutController {
@@ -22,9 +25,8 @@ public class AboutController {
     private Text aboutText;
 
     @FXML
-    void okButtonClicked(ActionEvent event) {
-        Stage stage = (Stage) okButton.getScene().getWindow();
-        stage.close();
+    void okButtonClicked(ActionEvent event) throws IOException {
+        sceneController.switchControlsAction(MAIN_SCREEN,event);
     }
 
     @FXML

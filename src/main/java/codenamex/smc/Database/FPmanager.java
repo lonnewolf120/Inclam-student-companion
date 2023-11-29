@@ -3,6 +3,7 @@ package codenamex.smc.Database;
 import codenamex.smc.design.CustomAlert;
 import codenamex.smc.sceneController;
 //import com.mysql.cj.xdevapi.Session;
+import com.mysql.cj.xdevapi.Result;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -86,10 +87,11 @@ public class FPmanager {
     PreparedStatement preparedStatement = con.prepareStatement(sql);
     preparedStatement.setString(1, userName.getText());
     ResultSet res = preparedStatement.executeQuery();
-
+    generatedCode = generateUniqueCode();
     if (res.next()) { // Check if there are any results
         emailToSend = res.getString("email");
         emailLabel.setText("Code sent to " + emailToSend + " 😊");
+        System.out.println("The code: "+ generatedCode);
     } else {
         // Handle the case where no email is found for the given user
         emailLabel.setText("Email address not found for the user.");
@@ -97,7 +99,7 @@ public class FPmanager {
     }
 
         final String username = "mailsendermsd@gmail.com";
-        final String password = "SMC_123456";
+        final String password = "SMC_1234";
 
         // Recipient's email address
 //        String to = "recipient@example.com";
@@ -128,21 +130,23 @@ public class FPmanager {
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(emailToSend));
 
-            generatedCode = generateUniqueCode();
+
 
             // Set Subject: header field
             message.setSubject("Code for Login");
 
             // Now set the actual message
-            message.setText("Hello, this is a test email from JavaFX!\nHere is your code: ");
+            message.setText("Hello, this is a test email from JavaFX!\nHere is your code: "+ generatedCode +"\nEnjoy your time!");
 
             // Send message
             Transport.send(message);
+            System.out.println("code "+generatedCode+"\n");
 
             System.out.println("Email sent successfully.");
 
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+//            throw new RuntimeException(e);
         }
     }
     @FXML
@@ -162,6 +166,7 @@ public class FPmanager {
 
     @FXML
     void ForgotPasswordSubmit(ActionEvent event) throws SQLException {
+        String usr = userName.getText();
         String newPass = newPassField.getText();
         String ConfirmPass = confirmPassField.getText();
         if(newPass.equals(ConfirmPass))
@@ -170,12 +175,13 @@ public class FPmanager {
              Connection con = DatabaseManager.connectDB();
             PreparedStatement prepare = con.prepareStatement(sql);
             prepare.setString(1, newPass);
-            prepare.setInt(2, Login.getUserId());
+            prepare.setString(2, usr);
 
-            ResultSet res = prepare.executeQuery();
+            Boolean res = prepare.execute();
 
-            if(res.next())
+            if(res)
             {
+                System.out.println("Password Changed!");
                 String tit = ("Password Changed");
                 String des = ("Password has been successfully updated.\nUse it next time while logging in");
                 CustomAlert.showInfoAlert(tit,des,CHANGE_PASS);
@@ -184,7 +190,7 @@ public class FPmanager {
             {
                 String tit = ("Password Not Changed");
                 String des = ("Password Couldn't be updated.\nRestart server & try again!");
-                CustomAlert.showInfoAlert(tit,des,CHANGE_PASS);
+//                CustomAlert.showInfoAlert(tit,des,CHANGE_PASS);
             }
 
         }

@@ -153,4 +153,20 @@ public class MainController {
     public void closeButton(ActionEvent e) {
         sceneController.closeButtonA(e);
     }
+
+    public void switchToVIz(ActionEvent event) throws IOException {
+        sceneController.switchToViz(event);
+    }
+
+    public void switchToTutorial(ActionEvent event) throws IOException {
+        sceneController.switchToTutorial(event);
+    }
+
+    public void switchToEditor(ActionEvent event) throws IOException {
+        sceneController.switchToEditor(event);
+    }
+
+    public void switchToUser(ActionEvent event) throws IOException {
+        sceneController.switchToUser(event);
+    }
 }

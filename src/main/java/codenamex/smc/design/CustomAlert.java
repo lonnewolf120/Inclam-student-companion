@@ -13,6 +13,6 @@ public class CustomAlert {
             ImageView imgV = new ImageView(); Image img = new Image(imagePath); imgV.setImage(img);
             imgV.setFitHeight(35); imgV.setFitWidth(35);
             alt.setGraphic(imgV);
-            alt.show();
+            alt.showAndWait();
     }
 }

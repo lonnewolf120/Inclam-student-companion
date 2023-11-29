@@ -5,7 +5,10 @@ import codenamex.smc.Database.Login;
 import codenamex.smc.design.CustomAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -14,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -97,7 +101,20 @@ public class userDashboard implements Initializable {
 
     @FXML
     void UpdateInfo(ActionEvent event) throws SQLException, IOException {
-        sceneController.switchControlsAction(USER_EDIT,event);
+//        sceneController.switchControlsAction(USER_EDIT,event);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(USER_EDIT));
+				BorderPane pane1 = null;
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
     }
 
     @FXML
@@ -107,7 +124,19 @@ public class userDashboard implements Initializable {
 
     @FXML
     void switchToEditor(ActionEvent event) throws IOException {
-        sceneController.switchToEditor(event);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
+				BorderPane pane1 = null;
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
     }
 
     @FXML
@@ -151,6 +180,14 @@ public class userDashboard implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void SignOutButton(ActionEvent event) throws IOException {
+        sceneController.switchToLoginA(event);
+    }
+
+    public void switchToViz(ActionEvent event) throws IOException {
+        sceneController.switchToViz(event);
     }
 
 //    public void switchToTasks(ActionEvent event) {

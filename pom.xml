@@ -142,15 +142,16 @@
       <artifactId>javafx-media</artifactId>
       <version>21-ea+24</version>
     </dependency>
-    <dependency>
-      <groupId>com.github.PlusHaze</groupId>
-      <artifactId>TrayNotification</artifactId>
-      <version>5393c3a54f</version>
-    </dependency>
+
     <dependency>
       <groupId>io.github.typhon0</groupId>
       <artifactId>AnimateFX</artifactId>
       <version>1.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>21-ea+24</version>
     </dependency>
     <!--      <dependency>-->
 <!--          <groupId>com.google.apis</groupId>-->
