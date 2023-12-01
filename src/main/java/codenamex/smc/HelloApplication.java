@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-import static codenamex.smc.Database.Const.MAIN_SCREEN;
+import static codenamex.smc.Const.MAIN_SCREEN;
 
 public class HelloApplication extends Application {
 

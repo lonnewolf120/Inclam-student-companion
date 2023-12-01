@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import codenamex.smc.utilities.EditorUtils;
@@ -15,8 +14,7 @@ import javafx.stage.WindowEvent;
 import java.io.IOException;
 import java.util.Objects;
 
-import static codenamex.smc.Database.Const.*;
-import static codenamex.smc.sceneController.MoveAbleWindow;
+import static codenamex.smc.Const.*;
 
 public class EditorMain extends Application {
 

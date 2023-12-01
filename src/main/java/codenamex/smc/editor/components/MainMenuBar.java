@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static codenamex.smc.Database.Const.EDITOR_MENUBAR;
+import static codenamex.smc.Const.EDITOR_MENUBAR;
 
 public class MainMenuBar extends MenuBar {
 

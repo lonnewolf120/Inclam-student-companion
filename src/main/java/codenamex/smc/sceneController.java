@@ -13,14 +13,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 
 public class sceneController {
     private static Parent root;

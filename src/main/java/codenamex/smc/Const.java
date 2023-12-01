@@ -1,4 +1,4 @@
-package codenamex.smc.Database;
+package codenamex.smc;
 //import de.jensd.fx.fontawesome.FontAwesomeIcon;
 public class Const {
     public static final String USER_TABLE = "login_info";

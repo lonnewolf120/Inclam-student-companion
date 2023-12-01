@@ -16,7 +16,7 @@ import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
 
-import static codenamex.smc.Database.Const.EDITOR_TEXTSPACE;
+import static codenamex.smc.Const.EDITOR_TEXTSPACE;
 
 public class TextSpace extends HBox {
     private int textSpaceNumber = 0;

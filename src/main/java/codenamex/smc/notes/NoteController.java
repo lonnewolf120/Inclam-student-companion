@@ -24,7 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
-import static codenamex.smc.Database.Const.NOTE_HOME;
+import static codenamex.smc.Const.NOTE_HOME;
 
 /**
  * FXML Controller class

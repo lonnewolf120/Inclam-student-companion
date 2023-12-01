@@ -17,7 +17,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 import static codenamex.smc.Database.DatabaseManager.connectDB;
 
 public class Login {

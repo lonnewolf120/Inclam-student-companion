@@ -27,8 +27,8 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static codenamex.smc.Database.Const.EDITOR_ABOUT;
-import static codenamex.smc.Database.Const.EDITOR_STYLE;
+import static codenamex.smc.Const.EDITOR_ABOUT;
+import static codenamex.smc.Const.EDITOR_STYLE;
 
 public class EditorUtils {
 

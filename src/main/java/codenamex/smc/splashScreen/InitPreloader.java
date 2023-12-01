@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static codenamex.smc.Database.Const.LOGIN_PAGE;
+import static codenamex.smc.Const.LOGIN_PAGE;
 
 public class InitPreloader implements Initializable {
 

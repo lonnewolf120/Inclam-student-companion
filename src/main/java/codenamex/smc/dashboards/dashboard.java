@@ -39,7 +39,7 @@ import java.util.ResourceBundle;
 import codenamex.smc.todo.add_item_controller;
 import javafx.util.Callback;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 
 public class dashboard implements Initializable {
 

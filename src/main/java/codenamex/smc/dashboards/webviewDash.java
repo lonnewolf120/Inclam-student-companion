@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 
 public class webviewDash implements Initializable {
 
@@ -56,20 +56,8 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
     @FXML
-    void switchToEditor(ActionEvent event) {
-        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
-				VBox pane1 = null;
-				try {
-					pane1 = loader1.load();
-				} catch (IOException e1) {
-//					e1.printStackTrace();
-				}
-//				AddAdminController controller = loader1.getController();
-
-				Parent root = (Parent) pane1;
-				Stage stage = new Stage();
-				stage.setScene(new Scene(root));
-				stage.show();
+    void switchToEditor(ActionEvent event) throws IOException {
+        sceneController.switchToEditor(event);
     }
 
     @FXML

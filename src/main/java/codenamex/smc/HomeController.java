@@ -38,7 +38,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 
 /**
  * @author UpToDate

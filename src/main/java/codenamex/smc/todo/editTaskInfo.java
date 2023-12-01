@@ -3,11 +3,9 @@ package codenamex.smc.todo;
 import codenamex.smc.model.TaskProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import codenamex.smc.todo.add_item_controller;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -17,7 +15,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import static codenamex.smc.Database.Const.EDIT_BUTTON;
+import static codenamex.smc.Const.EDIT_BUTTON;
 
 public class editTaskInfo implements Initializable {
 

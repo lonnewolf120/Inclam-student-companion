@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static codenamex.smc.Database.Const.PRELOADER;
+import static codenamex.smc.Const.PRELOADER;
 
 public class LauncherPreloader extends Preloader {
 

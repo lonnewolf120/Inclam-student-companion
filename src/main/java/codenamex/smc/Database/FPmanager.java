@@ -3,12 +3,9 @@ package codenamex.smc.Database;
 import codenamex.smc.design.CustomAlert;
 import codenamex.smc.sceneController;
 //import com.mysql.cj.xdevapi.Session;
-import com.mysql.cj.xdevapi.Result;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 //import java.net.Authenticator;
@@ -19,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import java.security.SecureRandom;
@@ -30,14 +26,8 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
-import static codenamex.smc.Database.Const.CHANGE_PASS;
+import static codenamex.smc.Const.CHANGE_PASS;
 
 
 public class FPmanager {

@@ -20,14 +20,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import codenamex.smc.sceneController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-import static codenamex.smc.Database.Const.*;
+import static codenamex.smc.Const.*;
 import static codenamex.smc.sceneController.floatingPane;
 
 public class userDashboard implements Initializable {
@@ -130,19 +129,7 @@ void UpdateInfo(ActionEvent event) throws SQLException, IOException {
 
     @FXML
     void switchToEditor(ActionEvent event) throws IOException {
-        FXMLLoader loader1 = new FXMLLoader(getClass().getResource(EDITOR_MAIN));
-				BorderPane pane1 = null;
-				try {
-					pane1 = loader1.load();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-//				AddAdminController controller = loader1.getController();
-
-				Parent root = (Parent) pane1;
-				Stage stage = new Stage();
-				stage.setScene(new Scene(root));
-				stage.show();
+        sceneController.switchToEditor(event);
     }
 
     @FXML

@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import codenamex.smc.utilities.EditorUtils;
 
-import static codenamex.smc.Database.Const.FIND_REPLACE;
+import static codenamex.smc.Const.FIND_REPLACE;
 
 
 public class FindReplaceToolBar extends VBox {

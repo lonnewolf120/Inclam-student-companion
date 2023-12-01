@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-import static codenamex.smc.Database.Const.MAIN_SCREEN;
+import static codenamex.smc.Const.MAIN_SCREEN;
 
 
 public class AboutController {

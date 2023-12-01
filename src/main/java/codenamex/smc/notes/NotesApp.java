@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import static codenamex.smc.Database.Const.NOTE_HOME;
+import static codenamex.smc.Const.NOTE_HOME;
 
 /**
  *

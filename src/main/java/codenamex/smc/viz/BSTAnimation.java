@@ -16,12 +16,11 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Objects;
 
-import static codenamex.smc.Database.Const.BACK_BUTTON;
-import static codenamex.smc.Database.Const.TUTORIAL_HOME;
+import static codenamex.smc.Const.BACK_BUTTON;
+import static codenamex.smc.Const.TUTORIAL_HOME;
 import static codenamex.smc.sceneController.MoveAbleWindow;
 //import static codenamex.smc.sceneController.root;
 
