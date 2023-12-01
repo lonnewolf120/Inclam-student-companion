@@ -130,6 +130,7 @@ void UpdateInfo(ActionEvent event) throws SQLException, IOException {
     @FXML
     void switchToEditor(ActionEvent event) throws IOException {
         sceneController.switchToEditor(event);
+        CustomAlert.showInfoAlert("User other switches", "If you can't access Editor from here\nSwitch to Task/Notes/User tab\nAnd select Editor from there",CANCEL_BUTTON);
     }
 
     @FXML

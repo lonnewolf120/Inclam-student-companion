@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import codenamex.smc.design.CustomAlert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -58,6 +59,7 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
     @FXML
     void switchToEditor(ActionEvent event) throws IOException {
         sceneController.switchToEditor(event);
+        CustomAlert.showInfoAlert("User other switches", "If you can't access Editor from here\nSwitch to Task/Notes/User tab\nAnd select Editor from there",CANCEL_BUTTON);
     }
 
     @FXML
