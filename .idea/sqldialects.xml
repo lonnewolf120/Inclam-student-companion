@@ -3,8 +3,8 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/Database/FPmanager.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/HomeController.java" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/NoteController.java" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/userDashboard.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/dashboards/userDashboard.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/codenamex/smc/notes/NoteController.java" dialect="MySQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
   <component name="SqlResolveMappings">

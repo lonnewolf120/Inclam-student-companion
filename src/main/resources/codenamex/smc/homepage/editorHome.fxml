@@ -2,7 +2,7 @@
 
 <!--<?import com.jfoenix.controls.Button?>-->
 
-<?import codenamex.smc.gui.components.*?>
+<?import codenamex.smc.editor.components.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="window" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.gui.components.MainController">
+<BorderPane fx:id="window" stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.editor.components.MainController">
    <left>
       <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>

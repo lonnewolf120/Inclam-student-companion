@@ -6,7 +6,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.InitPreloader">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.splashScreen.InitPreloader">
 <children>
       <Label fx:id="lblLoading" layoutX="14.0" layoutY="185.0" text="loading..." AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
       <ProgressBar layoutX="15.0" layoutY="156.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />

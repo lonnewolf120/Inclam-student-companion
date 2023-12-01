@@ -1,17 +1,15 @@
 package codenamex.smc;
-import codenamex.smc.ViewStyles;
+import codenamex.smc.design.ViewStyles;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
 
-import static codenamex.smc.Database.Const.LOGIN_PAGE;
 import static codenamex.smc.Database.Const.MAIN_SCREEN;
 
 public class HelloApplication extends Application {

@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -75,6 +76,20 @@ public class sceneController {
 //        }
 
     }
+    public static <rootPane> void floatingPane(rootPane pane1,String fxmlPath)
+    {
+        FXMLLoader loader1 = new FXMLLoader(sceneController.class.getResource(fxmlPath));
+				try {
+					pane1 = loader1.load();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+//				AddAdminController controller = loader1.getController();
+				Parent root = (Parent) pane1;
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
+    }
     public static void switchToSignup(MouseEvent e) throws IOException {
         switchControls(e,SIGNUP_PAGE);
     }
@@ -117,7 +132,8 @@ public class sceneController {
     }
 
     public static void switchToEditor(ActionEvent a) throws IOException {
-        switchControls(EDITOR_MAIN,a);
+        VBox vb = null;
+        floatingPane(vb,EDITOR_MAIN);
     }
 
     public static void closeButton(MouseEvent e) {

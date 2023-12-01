@@ -1,15 +1,12 @@
 package codenamex.smc.todo;
 
 import codenamex.smc.Database.DatabaseManager;
-import codenamex.smc.model.Task;
 import codenamex.smc.Database.Login;
 import codenamex.smc.model.TaskProperty;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import static codenamex.smc.editTaskInfo.getTask;
 
 
 public class add_item_controller {

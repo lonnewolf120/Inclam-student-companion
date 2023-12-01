@@ -11,7 +11,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="window" prefHeight="779.0" prefWidth="1394.0"
             stylesheets="@../css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal"
-            fx:controller="codenamex.smc.dashboard">
+            fx:controller="codenamex.smc.dashboards.dashboard">
    <left>
       <Pane prefHeight="725.0" prefWidth="191.0" style="-fx-background-color: #3F484E; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
          <children>

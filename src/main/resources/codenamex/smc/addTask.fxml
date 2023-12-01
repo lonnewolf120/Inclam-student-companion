@@ -20,7 +20,7 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="511.0" prefWidth="617.0"
       style="-fx-border-radius: 10 10 10 10;" stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/20.0.1"
-      fx:controller="codenamex.smc.editTaskInfo">
+      fx:controller="codenamex.smc.todo.editTaskInfo">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="384.0">
          <children>

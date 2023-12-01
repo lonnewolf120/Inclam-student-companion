@@ -1,8 +1,8 @@
 package codenamex.smc.utilities;
 
-import codenamex.smc.gui.components.MainMenuBar;
-import codenamex.smc.gui.mediator.Events;
-import codenamex.smc.gui.mediator.Mediator;
+import codenamex.smc.editor.components.MainMenuBar;
+import codenamex.smc.editor.mediator.Events;
+import codenamex.smc.editor.mediator.Mediator;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

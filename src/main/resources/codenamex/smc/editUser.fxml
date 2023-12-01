@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 
-<BorderPane stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.userDashboard">
+<BorderPane stylesheets="@css-files/darktheme.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codenamex.smc.dashboards.userDashboard">
    <center>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="572.0" style="-fx-border-color: orange;" stylesheets="@css-files/darktheme.css">
          <children>

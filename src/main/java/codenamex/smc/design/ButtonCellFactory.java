@@ -4,7 +4,7 @@
 //
 //import main.java.codenamex.smc.Database.DatabaseManager;
 //import main.java.codenamex.smc.Database.Login;
-//import main.java.codenamex.smc.dashboard;
+//import main.java.codenamex.smc.dashboards.dashboard;
 //import main.java.codenamex.smc.model.Task;
 //import main.java.codenamex.smc.model.TaskProperty;
 //import javafx.scene.control.TableCell;
