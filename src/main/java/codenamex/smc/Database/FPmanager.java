@@ -98,8 +98,8 @@ public class FPmanager {
         return; // Exit the method to avoid further execution
     }
 
-        final String username = "mailsendermsd@gmail.com";
-        final String password = "SMC_1234";
+        final String username = "";
+        final String password = "";
 
         // Recipient's email address
 //        String to = "recipient@example.com";
